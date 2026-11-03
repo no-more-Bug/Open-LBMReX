@@ -1,0 +1,20 @@
+# D3Q27 quasi-2D fixed-tau/Re Taylor-Green convergence identity. Long run is 4.9C.
+taylor_green.n_cell = 50 50 4
+taylor_green.parameterization = from_tau
+taylor_green.rho_lb = 1.0
+taylor_green.u_ref_phys = 1.0
+taylor_green.tau = 0.75
+taylor_green.re = 10.0
+mesh.max_grid_size = 25
+run.max_step = 100
+run.final_time_phys = 0.2
+run.kind = convergence
+run.variant = d3q27_quasi_2d
+run.convergence_enabled = 1
+run.convergence_reset = 1
+diagnostics.interval = 10
+output.directory = showcases/taylor_green_vortex/outputs/d3q27_convergence/run
+output.log_directory = showcases/taylor_green_vortex/log
+output.convergence_directory = ..
+output.plot_interval = 0
+output.write_final_plotfile = 0

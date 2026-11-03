@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="1080" viewBox="0 0 1480 1080" role="img" aria-labelledby="title desc">
+  <title id="title">新增双剪切层 numerical：三级嵌套带与上下分离带</title>
+  <desc id="desc">两个已确认目标区间的静态网格布局。左：L1覆盖上半域，L2为其中贯穿x的带状区域。右：上方L2带与下方L1带分离，上方L2另有必需的L1支撑区，使L1本身有两个不连通区域。上方L1显式取9/16至15/16，最终覆盖以AmrCore实际结果为准。</desc>
+  <defs>
+    <pattern id="g0" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#a9b7c5" stroke-width=".8"/></pattern>
+    <pattern id="g1" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#4b83b7" stroke-opacity=".38" stroke-width=".65"/></pattern>
+    <pattern id="g2" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M7 0H0V7" fill="none" stroke="#14826b" stroke-opacity=".28" stroke-width=".5"/></pattern>
+    <style>
+      text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#203044}
+      .title{font-size:29px;font-weight:700}.sub{font-size:17px;fill:#526174}.heading{font-size:23px;font-weight:700}
+      .body{font-size:17px}.small{font-size:15px;fill:#526174}.axis{font-size:15px;fill:#46566a}.tag{font-size:18px;font-weight:700}
+      .leader{fill:none;stroke:#475569;stroke-width:1.4}.shear{stroke:#b33d5b;stroke-width:2;stroke-dasharray:9 6}
+    </style>
+  </defs>
+  <rect width="1480" height="1080" fill="#f6f8fb"/>
+  <text x="48" y="55" class="title">新增双剪切层 numerical：多层级与多区域布局</text>
+  <text x="48" y="87" class="sub">L0 为最粗层；同一物理域 x/L、y/L ∈ [0,1]。目标区间已确认，最终覆盖以实际 A 为准。</text>
+
+  <rect x="40" y="115" width="684" height="790" rx="18" fill="white" stroke="#d5dde7"/>
+  <text x="66" y="156" class="heading">新增测试 1 · 三级嵌套带</text>
+  <text x="66" y="185" class="body">L0 上半域 → L1；再在 L1 内选一条 x 贯穿带 → L2</text>
+  <text x="84" y="222" class="axis">y/L</text>
+  <g transform="translate(112 238)">
+    <rect width="448" height="448" fill="#edf1f5"/>
+    <rect width="448" height="448" fill="url(#g0)"/>
+    <rect width="448" height="224" fill="#dcecff"/>
+    <rect width="448" height="224" fill="url(#g1)"/>
+    <rect y="56" width="448" height="112" fill="#d4f1e7"/>
+    <rect y="56" width="448" height="112" fill="url(#g2)"/>
+    <rect width="448" height="224" fill="none" stroke="#3a79b5" stroke-width="2.4"/>
+    <rect y="56" width="448" height="112" fill="none" stroke="#12866a" stroke-width="2.6"/>
+    <path d="M0 112H448M0 336H448" class="shear"/>
+    <rect width="448" height="448" fill="none" stroke="#34495e" stroke-width="1.8"/>
+    <text x="-18" y="6" text-anchor="end" class="axis">1</text>
+    <text x="-18" y="118" text-anchor="end" class="axis">3/4</text>
+    <text x="-18" y="230" text-anchor="end" class="axis">1/2</text>
+    <text x="-18" y="342" text-anchor="end" class="axis">1/4</text>
+    <text x="-18" y="454" text-anchor="end" class="axis">0</text>
+    <text x="0" y="475" text-anchor="middle" class="axis">0</text>
+    <text x="448" y="475" text-anchor="middle" class="axis">1</text>
+    <text x="473" y="475" class="axis">x/L</text>
+  </g>
+  <path d="M560 266H578" class="leader"/>
+  <text x="585" y="264" class="tag" fill="#28639a">L1</text>
+  <text x="585" y="288" class="small">上半域</text>
+  <path d="M560 350H578" class="leader"/>
+  <text x="585" y="348" class="tag" fill="#08765b">L2</text>
+  <text x="585" y="372" class="small">贯穿左右</text>
+  <text x="585" y="393" class="small">覆盖上剪切层</text>
+  <path d="M560 462H578" class="leader"/>
+  <text x="585" y="467" class="small">L1 下边界</text>
+  <text x="288" y="625" class="tag">L0 复合解区域</text>
+  <text x="66" y="753" class="body">目标区间：L1 为 1/2 ≤ y/L ≤ 1</text>
+  <text x="66" y="782" class="body">　　　　　L2 为 5/8 ≤ y/L ≤ 7/8</text>
+  <text x="66" y="826" class="body">本测试检查三个层级之间的嵌套推进与反馈。</text>
+  <text x="66" y="855" class="small">L2 两侧留有 L1；该测试本身不要求 L1 存在两个区域。</text>
+  <text x="66" y="881" class="small">所有色带均跨越 x 的整个周期；左右边缘不是物理壁面。</text>
+
+  <rect x="756" y="115" width="684" height="790" rx="18" fill="white" stroke="#d5dde7"/>
+  <text x="782" y="156" class="heading">新增测试 2 · 上下分离带</text>
+  <text x="782" y="185" class="body">上方目标 L2，下方目标 L1；两条请求带不重叠</text>
+  <text x="800" y="222" class="axis">y/L</text>
+  <g transform="translate(828 238)">
+    <rect width="448" height="448" fill="#edf1f5"/>
+    <rect width="448" height="448" fill="url(#g0)"/>
+    <rect y="28" width="448" height="168" fill="#e6f0ff"/>
+    <rect y="28" width="448" height="168" fill="url(#g1)"/>
+    <rect y="280" width="448" height="112" fill="#dcecff"/>
+    <rect y="280" width="448" height="112" fill="url(#g1)"/>
+    <rect y="56" width="448" height="112" fill="#d4f1e7"/>
+    <rect y="56" width="448" height="112" fill="url(#g2)"/>
+    <rect y="28" width="448" height="168" fill="none" stroke="#3a79b5" stroke-width="2.6" stroke-dasharray="8 5"/>
+    <rect y="280" width="448" height="112" fill="none" stroke="#3a79b5" stroke-width="2.4"/>
+    <rect y="56" width="448" height="112" fill="none" stroke="#12866a" stroke-width="2.6"/>
+    <path d="M0 112H448M0 336H448" class="shear"/>
+    <rect width="448" height="448" fill="none" stroke="#34495e" stroke-width="1.8"/>
+    <text x="-18" y="6" text-anchor="end" class="axis">1</text>
+    <text x="-18" y="118" text-anchor="end" class="axis">3/4</text>
+    <text x="-18" y="230" text-anchor="end" class="axis">1/2</text>
+    <text x="-18" y="342" text-anchor="end" class="axis">1/4</text>
+    <text x="-18" y="454" text-anchor="end" class="axis">0</text>
+    <text x="0" y="475" text-anchor="middle" class="axis">0</text>
+    <text x="448" y="475" text-anchor="middle" class="axis">1</text>
+    <text x="473" y="475" class="axis">x/L</text>
+  </g>
+  <path d="M1276 276H1292" class="leader"/>
+  <text x="1299" y="279" class="tag">L1 支撑区</text>
+  <text x="1299" y="302" class="small">9/16 至 15/16</text>
+  <path d="M1276 350H1292" class="leader"/>
+  <text x="1299" y="354" class="tag">L2 请求区</text>
+  <path d="M1276 574H1292" class="leader"/>
+  <text x="1299" y="578" class="tag">L1 请求区</text>
+  <text x="966" y="484" class="tag">L0 间隔：保持分离</text>
+  <text x="782" y="753" class="body">目标区间：上方 L2 为 5/8 ≤ y/L ≤ 7/8</text>
+  <text x="782" y="782" class="body">　　　　　下方 L1 为 1/8 ≤ y/L ≤ 3/8</text>
+  <text x="782" y="826" class="body">上方 L1 显式支撑：9/16 ≤ y/L ≤ 15/16。</text>
+  <text x="782" y="855" class="small">本测试要求最终 L1 的上、下两个连通区域仍分离。</text>
+  <text x="782" y="881" class="small">也须检查跨 y 周期边界后仍未连通；Box 数量不代表区域数。</text>
+
+  <rect x="40" y="925" width="1400" height="128" rx="15" fill="#eaf0f7"/>
+  <rect x="64" y="947" width="23" height="18" fill="#edf1f5" stroke="#a9b7c5"/><text x="98" y="962" class="body">L0</text>
+  <rect x="172" y="947" width="23" height="18" fill="#dcecff" stroke="#3a79b5"/><text x="206" y="962" class="body">L1</text>
+  <rect x="279" y="947" width="23" height="18" fill="#d4f1e7" stroke="#12866a"/><text x="313" y="962" class="body">L2</text>
+  <path d="M386 956H426" class="shear"/><text x="438" y="962" class="body">初始剪切层 y/L=1/4、3/4</text>
+  <text x="866" y="962" class="small">格线仅作稀疏示意，不是实际单元数。</text>
+  <text x="64" y="999" class="body">颜色表示最细有效覆盖；L0 全域存储、被 L2 覆盖的 L1 存储仍保留，不重复计入复合诊断。</text>
+  <text x="64" y="1030" class="small">xy 等效分辨率 128/256/512；准二维 z 格数 4/8/16、厚度 L/32。最终覆盖仍须核对，本图不是数值结果。</text>
+</svg>

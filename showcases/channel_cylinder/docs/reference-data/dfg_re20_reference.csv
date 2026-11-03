@@ -1,0 +1,7 @@
+metric,value,tolerance_kind,tolerance,scope
+Cd_final,5.57953523384,relative,0.01,N_D=80
+Cl_final,0.010618948146,absolute,0.002,N_D=80
+C_delta_p,2.93800417425,relative,0.03,N_D=80
+steady_residual,0,upper,5e-7,all_runs
+Cd_resolution_difference,0,relative,0.01,N_D=40_vs_80
+Cl_resolution_difference,0,absolute,0.002,N_D=40_vs_80

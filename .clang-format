@@ -1,0 +1,37 @@
+# Validated with clang-format 20.1.2. Keep the version fixed for reproducible diffs.
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++20
+IndentWidth: 4
+ContinuationIndentWidth: 4
+AlignAfterOpenBracket: AlwaysBreak
+AlignOperands: Align
+BreakBeforeBinaryOperators: None
+BreakBinaryOperations: RespectPrecedence
+BinPackParameters: OnePerLine
+AllowAllParametersOfDeclarationOnNextLine: false
+UseTab: Never
+ColumnLimit: 70
+AccessModifierOffset: -4
+NamespaceIndentation: None
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortEnumsOnASingleLine: false
+BreakTemplateDeclarations: Yes
+DerivePointerAlignment: false
+PointerAlignment: Left
+ReferenceAlignment: Pointer
+QualifierAlignment: Leave
+SortIncludes: Never
+IncludeBlocks: Preserve
+ReflowComments: false
+BreakStringLiterals: false
+# These are qualifiers on functions and CUDA lambdas, not function calls.
+AttributeMacros:
+  - AMREX_GPU_HOST_DEVICE
+  - AMREX_GPU_DEVICE
+  - AMREX_GPU_HOST
+  - AMREX_FORCE_INLINE

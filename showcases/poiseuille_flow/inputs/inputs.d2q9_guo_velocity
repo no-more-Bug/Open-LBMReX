@@ -1,0 +1,34 @@
+# Guo velocity inlet/outlet. The physical walls lie on the outer valid centers:
+# 41 x 11 valid nodes represent 40 x 10 physical intervals.
+poiseuille_flow.variant = guo_velocity
+poiseuille_flow.intervals = 40 10
+poiseuille_flow.depth_cells = 1
+poiseuille_flow.rho_lb = 1.0
+poiseuille_flow.u_max_lb = 0.1
+poiseuille_flow.u_ref_phys = 1.0
+poiseuille_flow.tau = 0.75
+
+mesh.max_grid_size = 16
+run.max_step = 20000
+run.final_time_phys = 1.0
+run.kind = steady
+run.variant = d2q9_guo_velocity_poiseuille_N10
+
+diagnostics.interval = 100
+diagnostics.steady_check_interval = 100
+diagnostics.steady_l2_tolerance = 5.0e-8
+diagnostics.stop_on_steady = 1
+
+poiseuille_validation.write_profile = 1
+poiseuille_validation.assert = 1
+# Equal velocity profiles leave the weakly-compressible density gauge open.
+poiseuille_validation.mass_assert = 0
+poiseuille_validation.e2_profile_tolerance = 5.0e-2
+poiseuille_validation.einf_profile_tolerance = 8.0e-2
+poiseuille_validation.transverse_tolerance = 1.0e-2
+poiseuille_validation.mass_tolerance = 1.0e-5
+
+output.directory = showcases/poiseuille_flow/outputs
+output.log_directory = showcases/poiseuille_flow/log
+output.plot_interval = 20000
+output.write_final_plotfile = 1

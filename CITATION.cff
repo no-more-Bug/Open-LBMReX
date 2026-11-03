@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this software and report the public commit or release tag used."
+type: software
+title: "Open-LBMReX"
+authors:
+  - name: "no-more-Bug"
+    website: "https://github.com/no-more-Bug"
+repository-code: "https://github.com/no-more-Bug/Open-LBMReX"
+url: "https://github.com/no-more-Bug/Open-LBMReX"
+license: BSD-3-Clause
+abstract: "A research lattice Boltzmann codebase built on AMReX, with D2Q9/D3Q27 case compositions, block-structured AMR, tests and flow examples."
+keywords:
+  - lattice Boltzmann method
+  - computational fluid dynamics
+  - adaptive mesh refinement
+  - AMReX

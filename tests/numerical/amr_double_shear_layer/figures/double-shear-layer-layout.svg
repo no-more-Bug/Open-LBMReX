@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="870" viewBox="0 0 1280 870" role="img" aria-labelledby="title desc">
+  <title id="title">双剪切层：上半域加密、层级存储与周期粗细接口</title>
+  <desc id="desc">左图为完整的128乘128粗层，上半域8192个covered coarse仍保留存储。右图为复合物理解：上半域256乘128个fine valid，下半域128乘64个uncovered coarse。粗细接口分别位于y等于L除以2和周期连接的y等于0与L。红色虚线表示初始剪切层，不表示计算结果。</desc>
+  <defs>
+    <pattern id="coarseGrid" width="50" height="50" patternUnits="userSpaceOnUse" x="115" y="204">
+      <path d="M50 0H0V50" fill="none" stroke="#c9ae79" stroke-width="1"/>
+    </pattern>
+    <pattern id="fineGrid" width="25" height="25" patternUnits="userSpaceOnUse" x="715" y="204">
+      <path d="M25 0H0V25" fill="none" stroke="#75b5a5" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="covered" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#e7ebf0"/>
+      <path d="M-2 2L2-2M0 10L10 0M8 12L12 8" stroke="#a9b4c1" stroke-width="1"/>
+    </pattern>
+    <style>
+      text { font-family: 'Noto Sans CJK SC','Microsoft YaHei','Droid Sans Fallback','WenQuanYi Micro Hei',sans-serif; fill: #183044; }
+      .muted { fill: #50677a; }
+      .bold { font-weight: 700; }
+      .body { font-size: 15px; }
+      .small { font-size: 14px; }
+    </style>
+  </defs>
+  <rect width="1280" height="870" fill="#f6f8fb"/>
+  <text x="32" y="48" font-size="28" class="bold">双剪切层：上半域细化到等效 256 × 256 分辨率</text>
+  <text x="32" y="82" font-size="17" class="muted">D2Q9 / BGK · Re = 10000 · u₀,lb = 0.1 · 全周期 · 固定厚度 H · 几何示意，非数值结果</text>
+
+  <rect x="30" y="115" width="570" height="650" rx="14" fill="#fff" stroke="#d4dfe8"/>
+  <rect x="620" y="115" width="630" height="650" rx="14" fill="#fff" stroke="#d4dfe8"/>
+  <text x="54" y="151" font-size="21" class="bold">A. L0 存储：完整 128 × 128</text>
+  <text x="54" y="178" class="body muted">覆盖不删除粗单元，也不把它们变成 ghost。</text>
+  <text x="644" y="151" font-size="21" class="bold">B. 复合物理解：U 与 F 拼接</text>
+  <text x="644" y="178" class="body muted">网格线按比例示意；实际单元数以文字标注为准。</text>
+
+  <rect x="115" y="204" width="400" height="400" fill="#fff1d4"/>
+  <rect x="115" y="204" width="400" height="200" fill="url(#covered)"/>
+  <rect x="115" y="204" width="400" height="400" fill="url(#coarseGrid)"/>
+  <rect x="115" y="204" width="400" height="400" fill="none" stroke="#183044" stroke-width="2"/>
+  <line x1="115" y1="404" x2="515" y2="404" stroke="#657b8e" stroke-width="2"/>
+  <rect x="170" y="268" width="290" height="75" rx="8" fill="#fff" fill-opacity="0.95"/>
+  <text x="315" y="298" text-anchor="middle" font-size="21" class="bold">K：covered coarse</text>
+  <text x="315" y="326" text-anchor="middle" class="body">128 × 64 = 8192 个，仍为 L0 valid</text>
+  <rect x="170" y="468" width="290" height="75" rx="8" fill="#fff" fill-opacity="0.95"/>
+  <text x="315" y="498" text-anchor="middle" font-size="21" class="bold">U：uncovered coarse</text>
+  <text x="315" y="526" text-anchor="middle" class="body">128 × 64 = 8192 个，进入复合解</text>
+  <text x="99" y="210" text-anchor="end" class="body">1</text>
+  <text x="99" y="410" text-anchor="end" class="body">1/2</text>
+  <text x="99" y="610" text-anchor="end" class="body">0</text>
+  <text x="91" y="192" text-anchor="end" class="body">y/L</text>
+  <text x="115" y="627" text-anchor="middle" class="body">0</text>
+  <text x="515" y="627" text-anchor="middle" class="body">1</text>
+  <text x="542" y="627" class="body">x/L</text>
+  <text x="54" y="665" class="body">粗格距 h_c = L/128；上半域由细层覆盖。</text>
+  <text x="54" y="695" class="body">L0 共存储 16384 个 valid；复合诊断只选 U。</text>
+  <text x="54" y="725" class="body muted">两层都保持 Nz = 1，并贯穿相同物理厚度 H。</text>
+
+  <rect x="715" y="204" width="400" height="200" fill="#dcf2eb"/>
+  <rect x="715" y="204" width="400" height="200" fill="url(#fineGrid)"/>
+  <rect x="715" y="404" width="400" height="200" fill="#fff1d4"/>
+  <rect x="715" y="404" width="400" height="200" fill="url(#coarseGrid)"/>
+  <rect x="715" y="204" width="400" height="400" fill="none" stroke="#183044" stroke-width="2"/>
+  <line x1="715" y1="204" x2="1115" y2="204" stroke="#8255b7" stroke-width="4"/>
+  <line x1="715" y1="604" x2="1115" y2="604" stroke="#8255b7" stroke-width="4"/>
+  <path d="M1123 204H1190V604H1123" fill="none" stroke="#8255b7" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="1155" y="337" width="72" height="129" rx="8" fill="#fff"/>
+  <text x="1191" y="362" text-anchor="middle" class="body" style="fill:#7244a5">同一处</text>
+  <text x="1191" y="387" text-anchor="middle" class="body" style="fill:#7244a5">周期</text>
+  <text x="1191" y="412" text-anchor="middle" class="body" style="fill:#7244a5">CF 接口</text>
+  <text x="1191" y="443" text-anchor="middle" class="small" style="fill:#7244a5">y = 0 ≡ L</text>
+
+  <rect x="775" y="227" width="280" height="61" rx="8" fill="#fff" fill-opacity="0.96"/>
+  <text x="915" y="251" text-anchor="middle" font-size="20" class="bold">F：256 × 128 fine valid</text>
+  <text x="915" y="276" text-anchor="middle" class="body">h_f = L/256，共 32768 个</text>
+  <line x1="715" y1="304" x2="1115" y2="304" stroke="#bd4859" stroke-width="2" stroke-dasharray="8 5"/>
+  <rect x="789" y="312" width="252" height="28" rx="5" fill="#fff" fill-opacity="0.94"/>
+  <text x="915" y="332" text-anchor="middle" class="small" style="fill:#a03445">初始上剪切层：y/L = 3/4</text>
+  <line x1="715" y1="404" x2="1115" y2="404" stroke="#d37a22" stroke-width="4"/>
+  <rect x="808" y="389" width="214" height="30" rx="5" fill="#fff8ed"/>
+  <text x="915" y="410" text-anchor="middle" class="body" style="fill:#985413">另一处 CF 接口：y = L/2</text>
+  <rect x="775" y="433" width="280" height="53" rx="8" fill="#fff" fill-opacity="0.96"/>
+  <text x="915" y="456" text-anchor="middle" font-size="20" class="bold">U：128 × 64 coarse valid</text>
+  <text x="915" y="478" text-anchor="middle" class="small">保持 h_c = L/128</text>
+  <line x1="715" y1="504" x2="1115" y2="504" stroke="#bd4859" stroke-width="2" stroke-dasharray="8 5"/>
+  <rect x="789" y="512" width="252" height="28" rx="5" fill="#fff" fill-opacity="0.94"/>
+  <text x="915" y="532" text-anchor="middle" class="small" style="fill:#a03445">初始下剪切层：y/L = 1/4</text>
+  <text x="699" y="210" text-anchor="end" class="body">1</text>
+  <text x="699" y="410" text-anchor="end" class="body">1/2</text>
+  <text x="699" y="610" text-anchor="end" class="body">0</text>
+  <text x="691" y="192" text-anchor="end" class="body">y/L</text>
+  <text x="715" y="627" text-anchor="middle" class="body">0</text>
+  <text x="1115" y="627" text-anchor="middle" class="body">1</text>
+  <text x="1140" y="627" class="body">x/L</text>
+  <text x="644" y="665" class="body">复合单元数：8192 + 32768 = 40960；不重复计入 K。</text>
+  <text x="644" y="695" class="body">x 两端为同层周期邻接；两处 y 接口均参与粗细交换。</text>
+  <text x="644" y="725" class="body muted">S0/S1 位于 F 外侧的粗区域；本图省略 ghost 与工作场。</text>
+
+  <rect x="30" y="785" width="1220" height="58" rx="10" fill="#eaf0f5"/>
+  <text x="49" y="810" class="body bold">对照：均匀 128² BGK ／ 均匀 256² BGK ／ 上半域加密 BGK</text>
+  <text x="49" y="832" class="small muted">比较相同物理时刻的原始场；次级涡是否改善由结果判断。图中的直线只表示初始剪切层和静态网格。</text>
+</svg>

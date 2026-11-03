@@ -1,0 +1,31 @@
+# Test-owned direct N_D=20 YMS tandem-cylinder distinct-ObjectId fixture.
+
+channel_cylinder.variant = tandem_distinct
+channel_cylinder.diameter_intervals = 20
+channel_cylinder.depth_cells = 1
+channel_cylinder.rho_lb = 1.0
+channel_cylinder.u_mean_lb = 0.035
+channel_cylinder.u_mean_phys = 0.2
+channel_cylinder.reynolds_height = 82
+
+mesh.max_grid_size = 64
+
+run.max_step = 3
+run.final_time_phys = 1.0
+run.kind = regression
+run.variant = d2q9_yms_nd20_distinct_short
+
+diagnostics.interval = 1
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-7
+diagnostics.stop_on_steady = 0
+
+channel_cylinder_observation.force_interval = 1
+channel_cylinder_observation.output_interval = 100
+channel_cylinder_observation.write_history = 1
+channel_cylinder_observation.assert = 0
+
+output.directory = outputs
+output.log_directory = logs
+output.plot_interval = 0
+output.write_final_plotfile = 0

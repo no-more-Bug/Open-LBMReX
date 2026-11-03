@@ -1,0 +1,31 @@
+# HBB midpoint velocity inlet/outlet, 10 physical intervals.
+uniform_flow.variant = hbb_velocity_io
+uniform_flow.intervals = 10 10
+uniform_flow.depth_cells = 1
+uniform_flow.rho_lb = 1.0
+uniform_flow.velocity_lb = 0.1
+uniform_flow.velocity_reference_phys = 1.0
+uniform_flow.nu_lb = 0.083333333333333333
+
+mesh.max_grid_size = 10
+
+run.max_step = 10000
+run.final_time_phys = 1.0
+run.kind = long-run
+run.variant = d2q9_hbb_velocity_io
+
+diagnostics.interval = 10000
+
+uniform_validation.write_metrics = 1
+uniform_validation.assert = 1
+uniform_validation.min_flow_throughs = 100
+uniform_validation.e2_u_tolerance = 1.0e-8
+uniform_validation.einf_u_tolerance = 1.0e-7
+uniform_validation.std_ux_tolerance = 1.0e-8
+uniform_validation.transverse_tolerance = 1.0e-8
+uniform_validation.mass_tolerance = 1.0e-8
+
+output.directory = showcases/uniform_flow/outputs/hbb_velocity_io/d2q9/long-run
+output.log_directory = showcases/uniform_flow/log/hbb_velocity_io/d2q9/long-run
+output.plot_interval = 10000
+output.write_final_plotfile = 1

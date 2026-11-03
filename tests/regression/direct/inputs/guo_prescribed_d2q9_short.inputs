@@ -1,0 +1,36 @@
+# Test-owned direct Poiseuille short; independent of case workflow inputs.
+poiseuille_flow.variant = guo_prescribed_state
+poiseuille_flow.intervals = 40 10
+poiseuille_flow.depth_cells = 1
+poiseuille_flow.rho_lb = 1.0
+poiseuille_flow.u_max_lb = 0.1
+poiseuille_flow.u_ref_phys = 1.0
+poiseuille_flow.tau = 0.75
+poiseuille_flow.rho_in_lb = 1.04
+poiseuille_flow.rho_out_lb = 0.96
+poiseuille_flow.pressure_scaling = fixed_re_fixed_tau
+
+mesh.max_grid_size = 16
+run.max_step = 2
+run.final_time_phys = 1.0
+run.kind = short
+run.variant = d2q9_guo_prescribed_short
+
+diagnostics.interval = 1
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-8
+diagnostics.stop_on_steady = 0
+
+poiseuille_validation.write_profile = 1
+poiseuille_validation.assert = 0
+poiseuille_validation.mass_assert = 0
+poiseuille_validation.e2_profile_tolerance = 1.0
+poiseuille_validation.einf_profile_tolerance = 1.0
+poiseuille_validation.transverse_tolerance = 1.0
+poiseuille_validation.mass_tolerance = 1.0
+poiseuille_validation.pressure_boundary_rho_tolerance = 1.0
+
+output.directory = tests/regression/work/poiseuille
+output.log_directory = tests/regression/work/poiseuille/log
+output.plot_interval = 0
+output.write_final_plotfile = 0

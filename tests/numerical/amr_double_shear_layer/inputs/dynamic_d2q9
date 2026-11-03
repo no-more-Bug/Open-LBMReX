@@ -1,0 +1,6 @@
+# Dynamic DSL physical parameters are fixed in src/DoubleShear.H.
+# Defaults for cadence, buffers and thresholds come from the production types.
+case.max_level = 1
+mesh.max_grid_size = 32
+# C6.5: relax clustering efficiency; production default remains 1.0.
+case.grid_efficiency = 0.7

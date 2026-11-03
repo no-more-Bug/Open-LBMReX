@@ -1,0 +1,10 @@
+# Tests-owned single-level CUDA performance controls.
+DistributionMapping.strategy = ROUNDROBIN
+run.max_step = 20
+profiling.warmup_steps = 0
+profiling.measurement_steps = 20
+performance.workload = dfg_d2q9
+performance.mode = smoke
+performance.measurement_mode = throughput
+performance.repeat = 1
+performance.output_csv = gpu_throughput_dfg_d2q9_r1.csv

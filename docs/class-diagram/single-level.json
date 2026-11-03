@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "LBMReX — single-level types and free functions",
+    "locale": "en",
+    "output": "docs/class-diagram/single-level.html",
+    "quality_profile": "showcase"
+  },
+  "layout": {
+    "mode": "grid",
+    "typeW": 250,
+    "typeMaxW": 300,
+    "gapX": 85,
+    "gapY": 100
+  },
+  "types": [
+    {
+      "id": "program",
+      "label": "SingleLevelProgram",
+      "kind": "record",
+      "row": 0,
+      "col": 0,
+      "sublabel": "Scientific intent; template arguments omitted",
+      "attributes": [
+        {
+          "name": "mesh",
+          "type": "SingleLevelMeshIntent",
+          "visibility": "public"
+        },
+        {
+          "name": "lbm",
+          "type": "LbmConfigIntent",
+          "visibility": "public"
+        },
+        {
+          "name": "dynamics",
+          "type": "DynamicsSelection",
+          "visibility": "public"
+        },
+        {
+          "name": "casePreparation",
+          "type": "CasePreparation",
+          "visibility": "public"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "result",
+      "label": "SingleLevelPreparationResult",
+      "kind": "class",
+      "row": 0,
+      "col": 1,
+      "sublabel": "Success token or setup diagnostics",
+      "attributes": [
+        {
+          "name": "prepared_",
+          "type": "optional<PreparedRun>",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "ok",
+          "parameters": "",
+          "returns": "bool",
+          "visibility": "public"
+        },
+        {
+          "name": "diagnostics",
+          "parameters": "",
+          "returns": "Diagnostics const&",
+          "visibility": "public"
+        },
+        {
+          "name": "take",
+          "parameters": "",
+          "returns": "PreparedRun",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "published",
+      "label": "SingleLevelPublishedState<D>",
+      "kind": "class",
+      "row": 0,
+      "col": 2,
+      "sublabel": "Read-only; callback lifetime only",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "step",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "physicalTime",
+          "parameters": "",
+          "returns": "Real",
+          "visibility": "public"
+        },
+        {
+          "name": "populations",
+          "parameters": "",
+          "returns": "Field const&",
+          "visibility": "public"
+        },
+        {
+          "name": "hasMacro",
+          "parameters": "",
+          "returns": "bool",
+          "visibility": "public"
+        },
+        {
+          "name": "macro",
+          "parameters": "",
+          "returns": "MacroField const&",
+          "visibility": "public"
+        },
+        {
+          "name": "forceBatch",
+          "parameters": "",
+          "returns": "ForceBatch const&",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "prepared",
+      "label": "PreparedSingleLevelRun",
+      "kind": "class",
+      "row": 1,
+      "col": 1,
+      "sublabel": "Opaque move-only token",
+      "attributes": [
+        {
+          "name": "state_",
+          "type": "unique_ptr<State>",
+          "visibility": "private"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "state",
+      "label": "PreparedRun::State",
+      "kind": "record",
+      "row": 2,
+      "col": 1,
+      "sublabel": "Private nested implementation type",
+      "attributes": [
+        {
+          "name": "dynamics",
+          "type": "Dynamics",
+          "visibility": "public"
+        },
+        {
+          "name": "runSession",
+          "type": "RunSession",
+          "visibility": "public"
+        },
+        {
+          "name": "boundarySystem",
+          "type": "BoundarySystem<D>",
+          "visibility": "public"
+        },
+        {
+          "name": "src / dst",
+          "type": "unique_ptr<Field>",
+          "visibility": "public"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "boundaries",
+      "label": "BoundarySystem<D>",
+      "kind": "class",
+      "row": 3,
+      "col": 0,
+      "sublabel": "Resolved domain + internal boundaries",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "tryInitialize",
+          "parameters": "specs, geom, error",
+          "returns": "bool",
+          "visibility": "public"
+        },
+        {
+          "name": "tryBindLayout",
+          "parameters": "ba, dm, error",
+          "returns": "bool",
+          "visibility": "public"
+        },
+        {
+          "name": "fillPreStreaming",
+          "parameters": "field, time",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "applyPostStreamingValidNodes",
+          "parameters": "src, dst, time",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "takeGlobalInternalForceBatch",
+          "parameters": "",
+          "returns": "ForceBatch",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "field",
+      "label": "LatticeField<D>",
+      "kind": "class",
+      "row": 3,
+      "col": 1,
+      "sublabel": "Population storage; D = Descriptor",
+      "attributes": [
+        {
+          "name": "data_",
+          "type": "amrex::MultiFab",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "multifab",
+          "parameters": "",
+          "returns": "MultiFab&",
+          "visibility": "public"
+        },
+        {
+          "name": "fillBoundary",
+          "parameters": "geometry",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "nComp",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "result-token",
+      "from": "result",
+      "to": "prepared",
+      "kind": "composition",
+      "label": "optional token"
+    },
+    {
+      "id": "token-state",
+      "from": "prepared",
+      "to": "state",
+      "kind": "composition",
+      "label": "state_"
+    },
+    {
+      "id": "state-boundaries",
+      "from": "state",
+      "to": "boundaries",
+      "kind": "composition",
+      "label": "owns"
+    },
+    {
+      "id": "state-fields",
+      "from": "state",
+      "to": "field",
+      "kind": "composition",
+      "label": "src / dst"
+    },
+    {
+      "id": "view-field",
+      "from": "published",
+      "to": "field",
+      "kind": "association",
+      "label": "borrows"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Free functions — not class members",
+      "items": [
+        "lbm::runtime::prepare_single_level(program) -> SingleLevelPreparationResult<...>",
+        "On success, std::move(result).take() transfers the opaque PreparedSingleLevelRun token.",
+        "lbm::runtime::run_single_level(prepared) consumes that token and returns SingleLevelRunReport.",
+        "SingleLevelProgram is a factory input; it is not retained as another runtime state owner."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Runtime behavior",
+      "items": [
+        "The run function sequences collision, pre-stream boundary work, streaming, reconstruction and observations.",
+        "RunSession is supplied by the case. Its start / observationPlan / observeInitialized / observeCompleted / observeFinal / writePerformance hooks are a compile-time contract.",
+        "Published views borrow fields; callers must not retain their references after the callback.",
+        "PreparedRun abbreviates PreparedSingleLevelRun<...>; Field abbreviates LatticeField<D>. Selected signatures omit overloads and qualifiers."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Scope",
+      "items": [
+        "AI-generated with Archify from inspected source; selected relationships, not an exhaustive class inventory.",
+        "Private State is shown only to explain lifetime. Template selection and scientific acceptance remain case-owned.",
+        "See sources.md for exact declarations and free-function entry points."
+      ]
+    }
+  ]
+}

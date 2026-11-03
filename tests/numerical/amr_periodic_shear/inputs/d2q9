@@ -1,0 +1,3 @@
+# Physics and layouts are composed in src/ShearWave.H.
+case.coarse_cells = 64
+mesh.max_grid_size = 32

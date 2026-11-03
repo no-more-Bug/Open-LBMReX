@@ -1,0 +1,8 @@
+# Fixed-band DSL geometry and physics are compiled in the dedicated case target.
+case.max_level = 2
+case.grid_efficiency = 0.8
+case.regrid_interval = 8
+case.tag_buffer_cells = 2
+case.theta_refine = 20
+case.theta_keep = 10
+mesh.max_grid_size = 32

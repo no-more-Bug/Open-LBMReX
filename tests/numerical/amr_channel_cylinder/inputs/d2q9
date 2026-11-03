@@ -1,0 +1,7 @@
+# Physical configuration is owned by Re20Case.H.
+case.layout = amr
+case.scheme = yms
+mesh.max_grid_size = 64
+run.max_step = -1
+run.source_id = unspecified
+output.directory = artifacts

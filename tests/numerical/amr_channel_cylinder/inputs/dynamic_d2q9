@@ -1,0 +1,11 @@
+case.variant = single
+case.scheme = yms
+case.grid_efficiency = 1.0
+case.regrid_interval = 8
+case.tag_buffer_cells = 2
+case.theta_refine = 2 4
+case.theta_keep = 1 2
+mesh.max_grid_size = 64
+run.max_step = -1
+amrex.omp_threads = 1
+amrex.use_gpu_aware_mpi = 0

@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "LBMReX — execution and ownership",
+    "locale": "en",
+    "output": "docs/architecture/lbmrex-architecture.html",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "frontend": {
+          "label": "Case-owned code"
+        },
+        "backend": {
+          "label": "Reusable C++ modules"
+        },
+        "database": {
+          "label": "Output files"
+        },
+        "external": {
+          "label": "External library"
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "showcases",
+      "type": "frontend",
+      "label": "Single-level showcases",
+      "sublabel": "C++ composition + case inputs",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        250,
+        80
+      ]
+    },
+    {
+      "id": "artifacts",
+      "type": "database",
+      "label": "Numerical artifacts",
+      "sublabel": "CSV / native plotfiles",
+      "pos": [
+        450,
+        40
+      ],
+      "size": [
+        250,
+        80
+      ]
+    },
+    {
+      "id": "tests",
+      "type": "frontend",
+      "label": "AMR test compositions",
+      "sublabel": "Static / dynamic cases",
+      "pos": [
+        860,
+        40
+      ],
+      "size": [
+        250,
+        80
+      ]
+    },
+    {
+      "id": "single",
+      "type": "backend",
+      "label": "Single-level runtime",
+      "sublabel": "prepare_single_level / run",
+      "pos": [
+        40,
+        245
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "observers",
+      "type": "frontend",
+      "label": "Case-owned observation",
+      "sublabel": "Callbacks / sampling / I/O",
+      "pos": [
+        450,
+        245
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "amr",
+      "type": "backend",
+      "label": "LbmAmrSimulation",
+      "sublabel": "Owns levels, fields and time",
+      "pos": [
+        860,
+        245
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "core",
+      "type": "backend",
+      "label": "LBM building blocks",
+      "sublabel": "Fields / operators / boundaries",
+      "pos": [
+        40,
+        480
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "type": "backend",
+      "label": "AMR hierarchy services",
+      "sublabel": "Coupling / tags / remap",
+      "pos": [
+        860,
+        480
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "amrex",
+      "type": "external",
+      "label": "AMReX installation",
+      "sublabel": "Mesh / MultiFab / MPI / GPU",
+      "pos": [
+        450,
+        710
+      ],
+      "size": [
+        250,
+        80
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "showcase-run",
+      "from": "showcases",
+      "to": "single",
+      "label": "prepare / run",
+      "variant": "emphasis"
+    },
+    {
+      "id": "test-evolve",
+      "from": "tests",
+      "to": "amr",
+      "label": "prepare / evolve",
+      "variant": "emphasis"
+    },
+    {
+      "id": "single-observe",
+      "from": "single",
+      "to": "observers",
+      "label": "observe"
+    },
+    {
+      "id": "amr-observe",
+      "from": "amr",
+      "to": "observers",
+      "label": "observe"
+    },
+    {
+      "id": "write-artifacts",
+      "from": "observers",
+      "to": "artifacts",
+      "label": "write"
+    },
+    {
+      "id": "single-core",
+      "from": "single",
+      "to": "core",
+      "label": "step"
+    },
+    {
+      "id": "amr-core",
+      "from": "amr",
+      "to": "core",
+      "label": "per-level step"
+    },
+    {
+      "id": "amr-hierarchy",
+      "from": "amr",
+      "to": "hierarchy",
+      "label": "couple / regrid"
+    },
+    {
+      "id": "core-amrex",
+      "from": "core",
+      "to": "amrex",
+      "label": "uses"
+    },
+    {
+      "id": "hierarchy-amrex",
+      "from": "hierarchy",
+      "to": "amrex",
+      "label": "uses"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Composition and ownership",
+      "items": [
+        "Descriptor and Dynamics are selected in C++; inputs expose case controls.",
+        "Showcases currently use single-level grids. Multilevel cases live in tests/numerical.",
+        "AMR performance code reuses numerical compositions, without their scientific acceptance policy.",
+        "Observers are supplied by each case; they consume published states and own sampling/output decisions."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Evolution and shared implementation",
+      "items": [
+        "Both paths use collision, streaming, field storage and boundary reconstruction.",
+        "LbmAmrSimulation owns its hierarchy and fields; adjacent levels use CoarseFineCoupling.",
+        "Fine levels subcycle twice. Static layouts do not regrid; dynamic layouts regrid only at the configured synchronized interval.",
+        "Regridding remaps populations and rebuilds affected coupling/boundary state. Interval forces are collected before regridding."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "How to read this overview",
+      "items": [
+        "AI-generated with Archify from inspected source. Arrows show calls or dependencies, not one universal execution sequence.",
+        "Groups summarize cooperating classes, not separate processes. This is a navigation overview, not an exhaustive class diagram.",
+        "AMReX is installed separately and linked through find_package; CPU and CUDA builds use distinct packages.",
+        "Dynamic AMR is experimental. CPU MPI was tested; resource-limited GPU parallel tests covered MIG slices, not multiple full GPUs. See README limitations."
+      ]
+    }
+  ]
+}

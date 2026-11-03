@@ -1,0 +1,20 @@
+# Tests-owned D2Q9 Taylor-Green convergence controls.
+taylor_green.n_cell = 50 50 1
+taylor_green.parameterization = from_tau
+taylor_green.rho_lb = 1.0
+taylor_green.u_ref_phys = 1.0
+taylor_green.tau = 0.75
+taylor_green.re = 10.0
+mesh.max_grid_size = 25
+run.max_step = 100
+run.final_time_phys = 0.2
+run.kind = convergence
+run.variant = numerical_tgv_d2q9
+run.convergence_enabled = 1
+run.convergence_reset = 1
+diagnostics.interval = 100
+output.directory = output
+output.log_directory = log
+output.convergence_directory = .
+output.plot_interval = 0
+output.write_final_plotfile = 0

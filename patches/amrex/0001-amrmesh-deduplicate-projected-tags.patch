@@ -1,0 +1,20 @@
+diff --git a/Src/AmrCore/AMReX_AmrMesh.cpp b/Src/AmrCore/AMReX_AmrMesh.cpp
+--- a/Src/AmrCore/AMReX_AmrMesh.cpp
++++ b/Src/AmrCore/AMReX_AmrMesh.cpp
+@@ -816,14 +816,16 @@
+             if (levf > useFixedUpToLevel()) {
+                 BoxList new_bx;
+                 if (ParallelDescriptor::IOProcessor()) {
+                     BL_PROFILE("AmrMesh-cluster");
+                     //
+                     // Construct initial cluster.
+                     //
++                    std::sort(tagvec.begin(), tagvec.end());
++                    tagvec.erase(std::unique(tagvec.begin(), tagvec.end()), tagvec.end());
+                     ClusterList clist(tagvec.data(), static_cast<Long>(tagvec.size()));
+                     if (use_new_chop) {
+                         clist.new_chop(grid_eff);
+                     } else {
+                         clist.chop(grid_eff);
+                     }
+                     clist.intersect(p_n_ba[levc]);

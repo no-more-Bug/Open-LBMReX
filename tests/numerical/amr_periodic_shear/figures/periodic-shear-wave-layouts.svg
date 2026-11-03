@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1320" viewBox="0 0 1720 1320" role="img" aria-labelledby="title desc">
+<title id="title">全周期对流衰减剪切波：D2与D3半域加密及两处粗细接口</title>
+<desc id="desc">D2Q9在右半x域加密，分别运行x轴向和xy斜向剪切波。D3Q27在上半z域加密，分别运行z轴向和xyz三向斜波。域内接口为粗到细，沿正法向通过周期接缝为细到粗。颜色表示复合有效层，粗层始终保留全域存储；格线仅示意二比一细化，不是实际网格或数值结果。</desc>
+<defs>
+<style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#203044}
+.title{font-size:32px;font-weight:700}.heading{font-size:26px;font-weight:700}
+.body{font-size:20px}.small{font-size:17px;fill:#526174}.axis{font-size:18px;fill:#46566a}
+.tag{font-size:21px;font-weight:700}.legend{font-size:18px}
+</style>
+<marker id="axis-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#b43e64"/></marker>
+<marker id="oblique-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#16856e"/></marker>
+<marker id="flow-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#526174"/></marker>
+</defs>
+<rect x="0" y="0" width="1720" height="1320" fill="#f6f8fb"/>
+<text x="44" y="54" class="title">全周期对流衰减剪切波：固定加密区域，分别改变波向</text>
+<text x="44" y="90" class="body">四个独立配置；每组只有一个平面剪切波。波矢 k 与背景速度 U 同向，速度扰动极化 p 与 k 垂直。</text>
+<rect x="44" y="115" width="28" height="22" fill="#edf1f5" stroke="#a9b7c5" rx="3"/>
+<text x="83" y="133" class="legend">L0 有效粗区</text>
+<rect x="248" y="115" width="28" height="22" fill="#dcecff" stroke="#a9b7c5" rx="3"/>
+<text x="287" y="133" class="legend">L1 细区</text>
+<path d="M454 126L490 126" fill="none" stroke="#d87622" stroke-width="3.5"/>
+<text x="501" y="133" class="legend">域内粗细接口</text>
+<path d="M696 126L732 126" fill="none" stroke="#8053ae" stroke-width="3.5" stroke-dasharray="7 4"/>
+<text x="743" y="133" class="legend">周期粗细接口</text>
+<path d="M945 126L981 126" fill="none" stroke="#b43e64" stroke-width="3.2" marker-end="url(#axis-arrow)"/>
+<text x="994" y="133" class="legend">轴向波</text>
+<path d="M1137 126L1173 126" fill="none" stroke="#16856e" stroke-width="3.2" marker-end="url(#oblique-arrow)"/>
+<text x="1186" y="133" class="legend">选定斜向波</text>
+<rect x="32" y="166" width="804" height="828" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="60" y="211" class="heading">D2Q9 · 右半 x 域加密</text>
+<text x="60" y="248" class="body">L1：[L/2, L] × [0, L] × [0, H]；细化比 (2,2,1)</text>
+<g id="d2-domain" data-fine-lo="0.5,0,0" data-fine-hi="1,1,1" data-ratio="2,2,1">
+<rect x="136" y="294" width="224" height="448" fill="#edf1f5"/>
+<rect x="360" y="294" width="224" height="448" fill="#dcecff"/>
+<path d="M192 294L192 742" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M248 294L248 742" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M304 294L304 742" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 350L360 350" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 406L360 406" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 462L360 462" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 518L360 518" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 574L360 574" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 630L360 630" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M136 686L360 686" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M388 294L388 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M416 294L416 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M444 294L444 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M472 294L472 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M500 294L500 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M528 294L528 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M556 294L556 742" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 322L584 322" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 350L584 350" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 378L584 378" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 406L584 406" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 434L584 434" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 462L584 462" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 490L584 490" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 518L584 518" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 546L584 546" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 574L584 574" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 602L584 602" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 630L584 630" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 658L584 658" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 686L584 686" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M360 714L584 714" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<rect x="136" y="294" width="448" height="448" fill="none" stroke="#34495e"/>
+<path d="M360 294L360 742" fill="none" stroke="#d87622" stroke-width="3.5"/>
+<path d="M136 294L136 742" fill="none" stroke="#8053ae" stroke-width="3.5" stroke-dasharray="8 5"/>
+<path d="M584 294L584 742" fill="none" stroke="#8053ae" stroke-width="3.5" stroke-dasharray="8 5"/>
+<rect x="159" y="316" width="145" height="37" fill="white" rx="6"/>
+<rect x="407" y="316" width="141" height="37" fill="white" rx="6"/>
+<text x="231" y="342" class="tag" text-anchor="middle">L0 有效粗区</text>
+<text x="477" y="342" class="tag" text-anchor="middle">L1 细区</text>
+<path d="M210 675L520 365" fill="none" stroke="#16856e" stroke-width="4.5" marker-end="url(#oblique-arrow)"/>
+<path d="M210 534L540 534" fill="none" stroke="#b43e64" stroke-width="4.5" marker-end="url(#axis-arrow)"/>
+<rect x="158" y="488" width="181" height="32" fill="white" rx="5"/>
+<text x="171" y="511" class="small" style="fill:#b43e64">轴向 k ∥ (1,0)</text>
+<rect x="393" y="626" width="169" height="33" fill="white" rx="5"/>
+<text x="405" y="649" class="small" style="fill:#16856e">斜向 k ∥ (1,1)</text>
+<path d="M442 619L403 482" fill="none" stroke="#16856e" stroke-width="1.4"/>
+<text x="117" y="301" class="axis" text-anchor="end">1</text>
+<text x="117" y="748" class="axis" text-anchor="end">0</text>
+<text x="106" y="276" class="axis">y/L</text>
+<text x="136" y="773" class="axis" text-anchor="middle">0</text>
+<text x="360" y="773" class="axis" text-anchor="middle">1/2</text>
+<text x="584" y="773" class="axis" text-anchor="middle">1</text>
+<text x="608" y="773" class="axis">x/L</text>
+<path d="M602 438L634 438" fill="none" stroke="#8053ae" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="648" y="433" class="small" style="fill:#8053ae">x 周期接缝</text>
+<text x="648" y="460" class="small">两端同一接口</text>
+<path d="M360 711L621 711" fill="none" stroke="#d87622" stroke-width="1.5"/>
+<text x="638" y="710" class="small" style="fill:#d87622">x = L/2</text>
+<text x="638" y="737" class="small">域内接口</text>
+</g>
+<text x="60" y="827" class="body">正入射 0°；斜入射 45°（相对 +x 法向）</text>
+<text x="60" y="865" class="body">L0：Nc × Nc × 1；L1 valid：Nc × 2Nc × 1</text>
+<text x="60" y="901" class="small">Nc = 64 / 128 / 256；均匀细参考每方向 2Nc 格</text>
+<text x="60" y="938" class="small">xy 全周期；z 贯穿共同厚度 H，各层 Nz = 1。</text>
+<text x="60" y="966" class="small">两种箭头表示分别运行的波向，不表示叠加初值。</text>
+<rect x="856" y="166" width="832" height="828" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="884" y="211" class="heading">D3Q27 · 上半 z 域加密</text>
+<text x="884" y="248" class="body">L1：[0, L]² × [L/2, L]；细化比 (2,2,2)</text>
+<g id="d3-domain" data-fine-lo="0,0,0.5" data-fine-hi="1,1,1" data-ratio="2,2,2">
+<polygon points="1044,738 1424,738 1424,548 1044,548" fill="#edf1f5" stroke="#8194a8" stroke-width="1.5"/>
+<polygon points="1424,738 1552,650 1552,460 1424,548" fill="#dfe6ed" stroke="#8194a8" stroke-width="1.5"/>
+<polygon points="1044,548 1424,548 1424,358 1044,358" fill="#dcecff" stroke="#8194a8" stroke-width="1.5"/>
+<polygon points="1424,548 1552,460 1552,270 1424,358" fill="#c4ddf5" stroke="#8194a8" stroke-width="1.5"/>
+<polygon points="1044,358 1424,358 1552,270 1172,270" fill="#eaf3ff" stroke="#8194a8" stroke-width="1.5"/>
+<path d="M1091.5 738L1091.5 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1440 727L1440 537" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1139 738L1139 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1456 716L1456 526" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1186.5 738L1186.5 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1472 705L1472 515" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1234 738L1234 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1488 694L1488 504" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1281.5 738L1281.5 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1504 683L1504 493" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1329 738L1329 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1520 672L1520 482" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1376.5 738L1376.5 548" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1536 661L1536 471" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1044 690.5L1424 690.5" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1424 690.5L1552 602.5" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1044 643L1424 643" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1424 643L1552 555" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1044 595.5L1424 595.5" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1424 595.5L1552 507.5" fill="none" stroke="#a9b7c5" stroke-width="0.8"/>
+<path d="M1067.75 548L1067.75 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1432 542.5L1432 352.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1067.75 358L1195.75 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1052 352.5L1432 352.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1091.5 548L1091.5 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1440 537L1440 347" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1091.5 358L1219.5 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1060 347L1440 347" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1115.25 548L1115.25 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1448 531.5L1448 341.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1115.25 358L1243.25 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1068 341.5L1448 341.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1139 548L1139 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1456 526L1456 336" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1139 358L1267 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1076 336L1456 336" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1162.75 548L1162.75 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1464 520.5L1464 330.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1162.75 358L1290.75 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1084 330.5L1464 330.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1186.5 548L1186.5 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1472 515L1472 325" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1186.5 358L1314.5 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1092 325L1472 325" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1210.25 548L1210.25 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1480 509.5L1480 319.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1210.25 358L1338.25 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1100 319.5L1480 319.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1234 548L1234 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1488 504L1488 314" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1234 358L1362 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1108 314L1488 314" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1257.75 548L1257.75 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1496 498.5L1496 308.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1257.75 358L1385.75 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1116 308.5L1496 308.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1281.5 548L1281.5 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1504 493L1504 303" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1281.5 358L1409.5 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1124 303L1504 303" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1305.25 548L1305.25 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1512 487.5L1512 297.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1305.25 358L1433.25 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1132 297.5L1512 297.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1329 548L1329 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1520 482L1520 292" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1329 358L1457 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1140 292L1520 292" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1352.75 548L1352.75 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1528 476.5L1528 286.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1352.75 358L1480.75 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1148 286.5L1528 286.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1376.5 548L1376.5 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1536 471L1536 281" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1376.5 358L1504.5 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1156 281L1536 281" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1400.25 548L1400.25 358" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1544 465.5L1544 275.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1400.25 358L1528.25 270" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1164 275.5L1544 275.5" fill="none" stroke="#a1bedc" stroke-width="0.65"/>
+<path d="M1044 524.25L1424 524.25" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 524.25L1552 436.25" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 500.5L1424 500.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 500.5L1552 412.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 476.75L1424 476.75" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 476.75L1552 388.75" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 453L1424 453" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 453L1552 365" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 429.25L1424 429.25" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 429.25L1552 341.25" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 405.5L1424 405.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 405.5L1552 317.5" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 381.75L1424 381.75" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1424 381.75L1552 293.75" fill="none" stroke="#87afd2" stroke-width="0.7"/>
+<path d="M1044 548L1424 548" fill="none" stroke="#d87622" stroke-width="3.5"/>
+<path d="M1424 548L1552 460" fill="none" stroke="#d87622" stroke-width="3.5"/>
+<path d="M1044 548L1172 460" fill="none" stroke="#d87622" stroke-width="2.5" stroke-dasharray="6 4"/>
+<path d="M1172 460L1552 460" fill="none" stroke="#d87622" stroke-width="2.5" stroke-dasharray="6 4"/>
+<path d="M1044 738L1424 738" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1424 738L1552 650" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1552 650L1172 650" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1172 650L1044 738" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1044 358L1424 358" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1424 358L1552 270" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1552 270L1172 270" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1172 270L1044 358" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1113.8 691.2L1113.8 402.4" fill="none" stroke="#b43e64" stroke-width="4.5" marker-end="url(#axis-arrow)"/>
+<path d="M1158.2 667.8L1437.6 410.4" fill="none" stroke="#16856e" stroke-width="4.5" marker-end="url(#oblique-arrow)"/>
+<rect x="1058" y="363" width="185" height="31" fill="white" rx="5"/>
+<text x="1070" y="386" class="small" style="fill:#b43e64">轴向 k ∥ (0,0,1)</text>
+<rect x="1258" y="382" width="140" height="34" fill="white" rx="5"/>
+<text x="1328" y="407" class="tag" text-anchor="middle">L1 细区</text>
+<rect x="1242" y="668" width="155" height="34" fill="white" rx="5"/>
+<text x="1320" y="693" class="tag" text-anchor="middle">L0 有效粗区</text>
+<path d="M1013 358H944V738H1013" fill="none" stroke="#8053ae" stroke-width="2" stroke-dasharray="7 4"/>
+<text x="877" y="525" class="small" style="fill:#8053ae">z 周期</text>
+<text x="877" y="555" class="small" style="fill:#8053ae">0 ≡ L</text>
+<text x="1027" y="744" class="axis" text-anchor="end">0</text>
+<text x="1027" y="554" class="axis" text-anchor="end">1/2</text>
+<text x="1027" y="364" class="axis" text-anchor="end">1</text>
+<text x="999" y="331" class="axis">z/L</text>
+<text x="1229" y="778" class="axis">x/L</text>
+<text x="1544" y="714" class="axis">y/L</text>
+<text x="1565" y="471" class="small" style="fill:#d87622">z = L/2</text>
+<text x="1565" y="499" class="small">域内接口</text>
+<text x="1450" y="554" class="small" style="fill:#16856e">斜向 (1,1,1)</text>
+<path d="M1465 533L1375 464" fill="none" stroke="#16856e" stroke-width="1.3"/>
+</g>
+<text x="884" y="827" class="body">正入射 0°；斜入射 arccos(1/√3) ≈ 54.7°</text>
+<text x="884" y="865" class="body">L0：Nc³；L1 valid：2Nc × 2Nc × Nc</text>
+<text x="884" y="901" class="small">Nc = 32 / 64 / 128；均匀细参考为 (2Nc)³</text>
+<text x="884" y="938" class="small">xyz 全周期；完整立方域，斜波同时随 xyz 变化。</text>
+<text x="884" y="966" class="small">54.7° 为空间波矢与 +z 法向的夹角；投影不保角。</text>
+<rect x="32" y="1018" width="1656" height="270" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="60" y="1060" class="heading">共同法向剖面：s = x（D2），s = z（D3）</text>
+<text x="1598" y="1060" class="small" text-anchor="end">背景输运的法向分量 &gt; 0</text>
+<rect x="280" y="1091" width="580" height="66" fill="#edf1f5"/>
+<rect x="860" y="1091" width="580" height="66" fill="#dcecff"/>
+<rect x="280" y="1091" width="1160" height="66" fill="none" stroke="#9aabba"/>
+<path d="M860 1083L860 1165" fill="none" stroke="#d87622" stroke-width="3.5"/>
+<path d="M280 1083L280 1165" fill="none" stroke="#8053ae" stroke-width="3.5" stroke-dasharray="7 4"/>
+<path d="M1440 1083L1440 1165" fill="none" stroke="#8053ae" stroke-width="3.5" stroke-dasharray="7 4"/>
+<text x="531" y="1133" class="tag" text-anchor="middle">L0 有效粗区</text>
+<text x="1120" y="1133" class="tag" text-anchor="middle">L1 细区</text>
+<path d="M671 1125L816 1125" fill="none" stroke="#526174" stroke-width="2.5" marker-end="url(#flow-arrow)"/>
+<path d="M1257 1125L1406 1125" fill="none" stroke="#526174" stroke-width="2.5" marker-end="url(#flow-arrow)"/>
+<text x="280" y="1189" class="axis" text-anchor="middle">s = 0</text>
+<text x="860" y="1189" class="axis" text-anchor="middle">s = L/2：粗 → 细</text>
+<text x="1440" y="1189" class="axis" text-anchor="middle">s = L ≡ 0：细 → 粗</text>
+<text x="60" y="1231" class="small">周期两端表示同一个接口；其余周期方向为同层邻接。L0 保留全域存储，covered coarse 不重复计入复合量。</text>
+<text x="60" y="1265" class="small">格线仅示意 2:1 细化，不代表实际 Box 切分、单元数或已生成的 A；本图是设计解释资产，不是数值结果。</text>
+</svg>

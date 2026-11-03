@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "LBMReX — fields, dynamics and level operators",
+    "locale": "en",
+    "output": "docs/class-diagram/fields-operators.html",
+    "quality_profile": "showcase"
+  },
+  "layout": {
+    "mode": "grid",
+    "typeW": 250,
+    "typeMaxW": 300,
+    "gapX": 85,
+    "gapY": 100
+  },
+  "types": [
+    {
+      "id": "levelOperator",
+      "label": "LevelOperator",
+      "kind": "abstract",
+      "row": 0,
+      "col": 1,
+      "sublabel": "Operator base; name() remains pure virtual",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "scope",
+          "parameters": "",
+          "returns": "OperatorScope",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "collision",
+      "label": "CollisionOperator<D,Dyn>",
+      "kind": "class",
+      "row": 1,
+      "col": 0,
+      "sublabel": "Illustrated Dyn = BGKDynamics<D>",
+      "attributes": [
+        {
+          "name": "dynamics_",
+          "type": "Dyn",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "name",
+          "parameters": "",
+          "returns": "string_view",
+          "visibility": "public"
+        },
+        {
+          "name": "apply",
+          "parameters": "Field&",
+          "returns": "void",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "streaming",
+      "label": "PullStreamingOperator<D>",
+      "kind": "class",
+      "row": 1,
+      "col": 1,
+      "sublabel": "Pull from collided src into dst",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "name",
+          "parameters": "",
+          "returns": "string_view",
+          "visibility": "public"
+        },
+        {
+          "name": "apply",
+          "parameters": "src, dst, writeGrow",
+          "returns": "void",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "macroscopic",
+      "label": "MacroscopicOperator<D>",
+      "kind": "class",
+      "row": 1,
+      "col": 2,
+      "sublabel": "Reconstruct density and velocity",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "name",
+          "parameters": "",
+          "returns": "string_view",
+          "visibility": "public"
+        },
+        {
+          "name": "apply",
+          "parameters": "populations, macro",
+          "returns": "void",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "bgk",
+      "label": "BGKDynamics<D>",
+      "kind": "class",
+      "row": 2,
+      "col": 0,
+      "sublabel": "Local isothermal model; no virtual collide",
+      "attributes": [
+        {
+          "name": "omega_",
+          "type": "Real",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "omega",
+          "parameters": "",
+          "returns": "Real",
+          "visibility": "public"
+        },
+        {
+          "name": "collide",
+          "parameters": "Cell&&",
+          "returns": "void",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "lattice",
+      "label": "LatticeField<D>",
+      "kind": "class",
+      "row": 2,
+      "col": 1,
+      "sublabel": "Cell-centered population components",
+      "attributes": [
+        {
+          "name": "data_",
+          "type": "amrex::MultiFab",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "multifab",
+          "parameters": "",
+          "returns": "MultiFab&",
+          "visibility": "public"
+        },
+        {
+          "name": "fillBoundary",
+          "parameters": "geometry, ...",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "nComp",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "macro",
+      "label": "MacroField",
+      "kind": "class",
+      "row": 2,
+      "col": 2,
+      "sublabel": "Density and three velocity components",
+      "attributes": [
+        {
+          "name": "NumComp",
+          "type": "int = 4",
+          "visibility": "public",
+          "static": true
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "real",
+      "label": "RealField",
+      "kind": "class",
+      "row": 3,
+      "col": 2,
+      "sublabel": "Generic real-valued field storage",
+      "attributes": [
+        {
+          "name": "meta_",
+          "type": "FieldMeta",
+          "visibility": "private"
+        },
+        {
+          "name": "data_",
+          "type": "amrex::MultiFab",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "multifab",
+          "parameters": "",
+          "returns": "MultiFab&",
+          "visibility": "public"
+        },
+        {
+          "name": "fillBoundary",
+          "parameters": "geometry",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "nComp",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "collision-inherits",
+      "from": "collision",
+      "to": "levelOperator",
+      "kind": "inheritance"
+    },
+    {
+      "id": "stream-inherits",
+      "from": "streaming",
+      "to": "levelOperator",
+      "kind": "inheritance"
+    },
+    {
+      "id": "macro-inherits",
+      "from": "macroscopic",
+      "to": "levelOperator",
+      "kind": "inheritance"
+    },
+    {
+      "id": "collision-bgk",
+      "from": "collision",
+      "to": "bgk",
+      "kind": "composition",
+      "label": "dynamics_"
+    },
+    {
+      "id": "collision-field",
+      "from": "collision",
+      "to": "lattice",
+      "kind": "dependency",
+      "label": "mutates"
+    },
+    {
+      "id": "stream-field",
+      "from": "streaming",
+      "to": "lattice",
+      "kind": "dependency",
+      "label": "src / dst"
+    },
+    {
+      "id": "macro-read",
+      "from": "macroscopic",
+      "to": "lattice",
+      "kind": "dependency",
+      "label": "reads"
+    },
+    {
+      "id": "macro-write",
+      "from": "macroscopic",
+      "to": "macro",
+      "kind": "dependency",
+      "label": "writes"
+    },
+    {
+      "id": "macro-real",
+      "from": "macro",
+      "to": "real",
+      "kind": "inheritance"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Template selection",
+      "items": [
+        "D denotes one descriptor, commonly D2Q9Descriptor or D3Q27Descriptor; d / q / c / w encode its lattice.",
+        "BGKDynamicsSelection::prepare<D>(resolvedConfig) constructs BGKDynamics<D> from omega.",
+        "The composition edge to BGKDynamics describes the illustrated Dyn specialization, not a fixed restriction on generic CollisionOperator.",
+        "BGKDynamics inherits IsoThermalDynamicsModelBase<D>, which inherits LocalDynamicsModel<D>; these marker bases are omitted from the drawing."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Dispatch and fields",
+      "items": [
+        "Operator defines virtual name() and scope(). apply() is not a virtual method on that base.",
+        "The level operator traverses AMReX tiles and invokes device-safe kernels. collide(Cell&&) uses compile-time dispatch.",
+        "LatticeField wraps population MultiFab storage directly; it does not inherit RealField. MacroField does inherit RealField.",
+        "Field arguments are borrowed. Operators do not retain ownership of the source or destination fields."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Scope",
+      "items": [
+        "AI-generated with Archify; only selected fields, methods and type relations are shown.",
+        "Field = LatticeField<D>; Real = amrex::Real. Exact overloads and const/noexcept qualifiers are in sources.md.",
+        "This structural map is not evidence of numerical correctness or validated full-GPU parallel execution."
+      ]
+    }
+  ]
+}

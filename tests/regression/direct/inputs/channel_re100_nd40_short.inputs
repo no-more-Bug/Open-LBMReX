@@ -1,0 +1,31 @@
+# Test-owned DFG-derived Re100 D2Q9/YMS N_D=40 real short artifact.
+
+channel_cylinder.variant = re100_yms
+channel_cylinder.diameter_intervals = 40
+channel_cylinder.depth_cells = 1
+channel_cylinder.rho_lb = 1.0
+channel_cylinder.u_mean_lb = 0.035
+channel_cylinder.u_mean_phys = 1.0
+channel_cylinder.reynolds_height = 410
+
+mesh.max_grid_size = 64
+
+run.max_step = 40
+run.final_time_phys = 35.0
+run.kind = regression
+run.variant = d2q9_re100_yms_nd40_short
+
+diagnostics.interval = 40
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-7
+diagnostics.stop_on_steady = 0
+
+channel_cylinder_observation.force_interval = 1
+channel_cylinder_observation.output_interval = 200
+channel_cylinder_observation.write_history = 1
+channel_cylinder_observation.assert = 0
+
+output.directory = outputs
+output.log_directory = logs
+output.plot_interval = 0
+output.write_final_plotfile = 0

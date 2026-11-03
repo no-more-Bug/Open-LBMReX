@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "LBMReX — AMR evolution and ownership",
+    "locale": "en",
+    "output": "docs/class-diagram/amr.html",
+    "quality_profile": "showcase"
+  },
+  "layout": {
+    "mode": "grid",
+    "typeW": 250,
+    "typeMaxW": 300,
+    "gapX": 85,
+    "gapY": 100
+  },
+  "types": [
+    {
+      "id": "level",
+      "label": "LevelEvolution<C>",
+      "kind": "record",
+      "row": 0,
+      "col": 0,
+      "sublabel": "Per-level lattice units and collision",
+      "attributes": [
+        {
+          "name": "collision",
+          "type": "C",
+          "visibility": "public"
+        },
+        {
+          "name": "lbm",
+          "type": "ResolvedLbmConfig",
+          "visibility": "public"
+        },
+        {
+          "name": "dtPhys",
+          "type": "Real",
+          "visibility": "public"
+        },
+        {
+          "name": "dtLb",
+          "type": "int",
+          "visibility": "public"
+        }
+      ],
+      "methods": [
+        {
+          "name": "dxLb",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "evolution",
+      "label": "PreparedAmrEvolution<C>",
+      "kind": "class",
+      "row": 0,
+      "col": 1,
+      "sublabel": "Caller-owned; keep alive while evolving",
+      "attributes": [
+        {
+          "name": "levels_",
+          "type": "vector<LevelEvolution<C>>",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "numLevels",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "level",
+          "parameters": "lev",
+          "returns": "LevelEvolution<C> const&",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "view",
+      "label": "LbmAmrView<D>",
+      "kind": "record",
+      "row": 0,
+      "col": 2,
+      "sublabel": "Borrowed observation data",
+      "attributes": [
+        {
+          "name": "levels",
+          "type": "vector<LbmAmrLevelView<D>>",
+          "visibility": "public"
+        },
+        {
+          "name": "step",
+          "type": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "physicalTime",
+          "type": "Real",
+          "visibility": "public"
+        },
+        {
+          "name": "forceBatch",
+          "type": "ForceBatch const&",
+          "visibility": "public"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "simulation",
+      "label": "LbmAmrSimulation<D,P,T>",
+      "kind": "class",
+      "row": 1,
+      "col": 1,
+      "sublabel": "Private amrex::AmrCore inheritance",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "numLevels",
+          "parameters": "",
+          "returns": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "geometry",
+          "parameters": "lev",
+          "returns": "Geometry const&",
+          "visibility": "public"
+        },
+        {
+          "name": "observe",
+          "parameters": "withMacro, observer",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "evolve",
+          "parameters": "evolution, steps, ...",
+          "returns": "AmrRunResult",
+          "visibility": "public"
+        },
+        {
+          "name": "installHierarchy",
+          "parameters": "candidate, mappings, time",
+          "returns": "void",
+          "visibility": "protected"
+        },
+        {
+          "name": "prepareLevelStep",
+          "parameters": "lev, phase, ...",
+          "returns": "void",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "coupling",
+      "label": "CoarseFineCoupling<D>",
+      "kind": "class",
+      "row": 2,
+      "col": 0,
+      "sublabel": "One adjacent coarse/fine level pair",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "explode",
+          "parameters": "coarseStar, fine, ...",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "coalesce",
+          "parameters": "fineSource, coarseNext, ...",
+          "returns": "void",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "levelFields",
+      "label": "Simulation::LevelFields",
+      "kind": "record",
+      "row": 2,
+      "col": 1,
+      "sublabel": "Private nested type; owned per level",
+      "attributes": [
+        {
+          "name": "current / next",
+          "type": "unique_ptr<LatticeField<D>>",
+          "visibility": "public"
+        },
+        {
+          "name": "macro",
+          "type": "unique_ptr<MacroField>",
+          "visibility": "public"
+        },
+        {
+          "name": "step",
+          "type": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "physicalTime",
+          "type": "Real",
+          "visibility": "public"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "boundary",
+      "label": "AmrBoundarySystem<D>",
+      "kind": "class",
+      "row": 2,
+      "col": 2,
+      "sublabel": "Owns per-level boundary records",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "tryDefine",
+          "parameters": "spec, layouts, error",
+          "returns": "bool",
+          "visibility": "public"
+        },
+        {
+          "name": "fillPhysicalGhosts",
+          "parameters": "coarsest, time",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "applyPostStreamingValidNodes",
+          "parameters": "level, src, dst, time",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "recordInternalForceSample",
+          "parameters": "step, src, completed",
+          "returns": "void",
+          "visibility": "public"
+        },
+        {
+          "name": "takeGlobalInternalForceBatch",
+          "parameters": "evolution, step, times",
+          "returns": "ForceBatch",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "populations",
+      "label": "LatticeField<D>",
+      "kind": "class",
+      "row": 3,
+      "col": 1,
+      "sublabel": "Current / next population buffers",
+      "attributes": [
+        {
+          "name": "data_",
+          "type": "amrex::MultiFab",
+          "visibility": "private"
+        }
+      ],
+      "methods": [
+        {
+          "name": "multifab",
+          "parameters": "",
+          "returns": "MultiFab&",
+          "visibility": "public"
+        },
+        {
+          "name": "fillBoundary",
+          "parameters": "geometry, ...",
+          "returns": "void",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "macro",
+      "label": "MacroField",
+      "kind": "class",
+      "row": 3,
+      "col": 2,
+      "sublabel": "Extends RealField; optional reconstruction",
+      "attributes": [
+        {
+          "name": "Rho / Ux / Uy / Uz",
+          "type": "component indices",
+          "visibility": "public",
+          "static": true
+        }
+      ],
+      "methods": []
+    }
+  ],
+  "relationships": [
+    {
+      "id": "evolution-levels",
+      "from": "evolution",
+      "to": "level",
+      "kind": "composition",
+      "label": "levels_"
+    },
+    {
+      "id": "simulation-evolution",
+      "from": "simulation",
+      "to": "evolution",
+      "kind": "dependency",
+      "label": "borrows"
+    },
+    {
+      "id": "simulation-view",
+      "from": "simulation",
+      "to": "view",
+      "kind": "dependency",
+      "label": "publishes"
+    },
+    {
+      "id": "simulation-coupling",
+      "from": "simulation",
+      "to": "coupling",
+      "kind": "composition",
+      "label": "couplings_"
+    },
+    {
+      "id": "simulation-fields",
+      "from": "simulation",
+      "to": "levelFields",
+      "kind": "composition",
+      "label": "fields_"
+    },
+    {
+      "id": "simulation-boundaries",
+      "from": "simulation",
+      "to": "boundary",
+      "kind": "composition",
+      "label": "boundaries_"
+    },
+    {
+      "id": "level-populations",
+      "from": "levelFields",
+      "to": "populations",
+      "kind": "composition",
+      "label": "current / next"
+    },
+    {
+      "id": "level-macro",
+      "from": "levelFields",
+      "to": "macro",
+      "kind": "composition",
+      "label": "optional macro"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Free preparation functions",
+      "items": [
+        "lbm::amr::prepare_static_hierarchy(spec, profile, boundaries) -> StaticHierarchyPreparation<...>",
+        "lbm::amr::prepare_dynamic_hierarchy(spec, profile, tagging, boundaries) -> HierarchyPreparation<...>",
+        "HierarchyPreparation::take() transfers unique ownership of LbmAmrSimulation.",
+        "lbm::runtime::prepare_amr_evolution(simulation, intent, selection) -> LbmAmrEvolutionPreparation<...>; take() yields PreparedAmrEvolution."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Lifetime and sequencing",
+      "items": [
+        "The simulation owns fields, boundaries and coarse/fine coupling. PreparedAmrEvolution is borrowed, not owned by the simulation.",
+        "LbmAmrView owns a vector of small level-view records; those records borrow field references. It does not own another copy of the fields.",
+        "Fine levels subcycle twice. Dynamic regridding is conditional on the synchronized interval; static tagging does not regrid.",
+        "Collect interval forces before regridding; remap populations and rebuild affected coupling/boundary records after layout changes."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Notation and limits",
+      "items": [
+        "D = Descriptor, P = initialization profile, T = tagging type, C = collision operator.",
+        "Selected signatures abbreviate parameters and template arguments; overloads, qualifiers and many helper types are omitted.",
+        "AI-generated with Archify; see sources.md and known limitations. Dynamic AMR remains experimental."
+      ]
+    }
+  ]
+}

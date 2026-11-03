@@ -1,0 +1,21 @@
+# Fixed C5 request list; same Spec as direct C++ composition.
+static_test.mode = topology_inputs
+static_test.fixture = D3-Topo-Union
+static_test.n_cell = 32 32 32
+static_test.prob_lo = 0 0 0
+static_test.prob_hi = 1 1 1
+static_test.is_periodic = 1 1 1
+static_test.ref_ratio = 2 2 2
+static_test.max_grid_size = 32 32 32
+static_test.gap_fill_radius_cells = 4
+static_test.coarse_nesting_margin_cells = 4
+static_test.grid_eff = 1
+static_test.region_levels = 1 1 1 1
+static_test.region_0_lo = 0.1875 0.1875 0.1875
+static_test.region_0_hi = 0.4375 0.4375 0.4375
+static_test.region_1_lo = 0.3125 0.25 0.25
+static_test.region_1_hi = 0.5625 0.5 0.5
+static_test.region_2_lo = 0.1875 0.1875 0.1875
+static_test.region_2_hi = 0.4375 0.4375 0.4375
+static_test.region_3_lo = 0.25 0.25 0.25
+static_test.region_3_hi = 0.3125 0.3125 0.3125

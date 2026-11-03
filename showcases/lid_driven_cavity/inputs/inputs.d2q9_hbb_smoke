@@ -1,0 +1,25 @@
+# Direct D2Q9 HBB lid-driven-cavity smoke identity.
+cavity.physical_lo = 0.0 0.0
+cavity.physical_hi = 1.0 1.0
+cavity.intervals = 50 50
+cavity.depth_cells = 4
+cavity.wall_scheme = halfway_bounce_back
+cavity.rho_lb = 1.0
+cavity.re = 100.0
+cavity.lid_velocity_lb = 0.1
+cavity.u_ref_phys = 1.0
+mesh.max_grid_size = 25
+run.max_step = 50
+run.final_time_phys = 1.0
+run.kind = smoke
+run.variant = d2q9_hbb_smoke
+diagnostics.interval = 10
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-8
+diagnostics.stop_on_steady = 0
+diagnostics.write_centerlines = 0
+diagnostics.write_metrics = 0
+output.directory = showcases/lid_driven_cavity/outputs/d2q9_hbb_smoke
+output.log_directory = showcases/lid_driven_cavity/log
+output.plot_interval = 0
+output.write_final_plotfile = 0

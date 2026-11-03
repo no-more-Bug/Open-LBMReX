@@ -1,0 +1,5 @@
+# D3 uses the same physical problem, with Nz=4/8/16.
+mesh.max_grid_size = 16
+run.max_step = -1
+amrex.omp_threads = 1
+amrex.use_gpu_aware_mpi = 0

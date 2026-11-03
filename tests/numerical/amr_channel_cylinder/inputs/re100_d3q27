@@ -1,0 +1,6 @@
+case.layout = amr
+case.scheme = yms
+mesh.max_grid_size = 64
+run.max_step = -1
+amrex.omp_threads = 1
+amrex.use_gpu_aware_mpi = 0

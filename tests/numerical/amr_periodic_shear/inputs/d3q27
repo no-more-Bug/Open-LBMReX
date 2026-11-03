@@ -1,0 +1,2 @@
+case.coarse_cells = 32
+mesh.max_grid_size = 32

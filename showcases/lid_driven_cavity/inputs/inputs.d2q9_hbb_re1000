@@ -1,0 +1,25 @@
+# Direct D2Q9 HBB cavity. 129 valid centers span 129 physical intervals.
+cavity.physical_lo = 0.0 0.0
+cavity.physical_hi = 1.0 1.0
+cavity.intervals = 129 129
+cavity.depth_cells = 1
+cavity.wall_scheme = halfway_bounce_back
+cavity.rho_lb = 1.0
+cavity.re = 1000.0
+cavity.lid_velocity_lb = 0.1
+cavity.u_ref_phys = 1.0
+mesh.max_grid_size = 32
+run.max_step = 200000
+run.final_time_phys = 1.0
+run.kind = validation
+run.variant = d2q9_hbb_re1000_ghia
+diagnostics.interval = 5000
+diagnostics.steady_check_interval = 5000
+diagnostics.steady_l2_tolerance = 5.0e-8
+diagnostics.stop_on_steady = 1
+diagnostics.write_centerlines = 1
+diagnostics.write_metrics = 0
+output.directory = showcases/lid_driven_cavity/outputs/d2q9_hbb_re1000_ghia
+output.log_directory = showcases/lid_driven_cavity/log
+output.plot_interval = 200000
+output.write_final_plotfile = 1

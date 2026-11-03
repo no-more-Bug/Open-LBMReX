@@ -1,0 +1,19 @@
+#ifndef LBM_TESTS_PERFORMANCE_PERFORMANCEBUILDINFO_H
+#define LBM_TESTS_PERFORMANCE_PERFORMANCEBUILDINFO_H
+
+// This tests-owned build identity was initially introduced for Stage 5.02.
+namespace lbm::tests::performance::build_info {
+
+inline constexpr char gitCommit[] = "@LBM_PERFORMANCE_GIT_COMMIT@";
+inline constexpr char amrexGitVersion[] =
+    "@LBM_PERFORMANCE_AMREX_GIT_VERSION@";
+inline constexpr char amrexBuildType[] =
+    "@LBM_PERFORMANCE_AMREX_BUILD_TYPE@";
+inline constexpr char amrexPrefix[] = "@LBM_PERFORMANCE_AMREX_PREFIX@";
+inline constexpr char buildType[] = "@CMAKE_BUILD_TYPE@";
+inline constexpr char compiler[] = "@LBM_PERFORMANCE_COMPILER@";
+inline constexpr char mpi[] = "@LBM_PERFORMANCE_MPI@";
+
+} // namespace lbm::tests::performance::build_info
+
+#endif

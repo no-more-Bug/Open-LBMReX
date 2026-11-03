@@ -1,0 +1,7 @@
+# Descriptor comes from the D3Q27 executable; all levels remain isotropic.
+case.layout = amr
+case.scheme = yms
+mesh.max_grid_size = 64
+run.max_step = -1
+run.source_id = unspecified
+output.directory = artifacts

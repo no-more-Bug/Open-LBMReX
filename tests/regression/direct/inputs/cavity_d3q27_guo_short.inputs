@@ -1,0 +1,23 @@
+# Test-owned D3Q27 Guo short: 129 nodes, 128 intervals, four periodic z cells.
+cavity.physical_lo = 0.0 0.0
+cavity.physical_hi = 1.0 1.0
+cavity.intervals = 128 128
+cavity.depth_cells = 4
+cavity.wall_scheme = guo_extrapolation
+cavity.rho_lb = 1.0
+cavity.re = 1000.0
+cavity.lid_velocity_lb = 0.1
+cavity.u_ref_phys = 1.0
+mesh.max_grid_size = 32
+run.max_step = 2
+run.final_time_phys = 1.0
+run.kind = regression
+run.variant = d3q27_guo_short
+diagnostics.interval = 1
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-8
+diagnostics.stop_on_steady = 0
+diagnostics.write_centerlines = 1
+diagnostics.write_metrics = 1
+output.plot_interval = 0
+output.write_final_plotfile = 0

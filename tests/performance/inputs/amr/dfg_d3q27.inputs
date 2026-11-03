@@ -1,0 +1,10 @@
+case.layout = amr
+performance.workload = dfg_d3q27
+performance.mode = calibration
+performance.measurement_mode = throughput
+performance.repeat = 1
+profiling.warmup_steps = 64
+profiling.measurement_steps = 512
+run.max_step = 576
+amrex.omp_threads = 1
+amrex.use_gpu_aware_mpi = 0

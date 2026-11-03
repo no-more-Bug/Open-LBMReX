@@ -1,0 +1,7 @@
+/build/
+/outputs/*
+!/outputs/.gitignore
+!/outputs/README.md
+/log/*
+!/log/.gitignore
+!/log/README.md

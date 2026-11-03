@@ -1,0 +1,8 @@
+/build/
+__pycache__/
+/outputs/*
+!/outputs/.gitignore
+!/outputs/README.md
+/log/*
+!/log/.gitignore
+!/log/README.md

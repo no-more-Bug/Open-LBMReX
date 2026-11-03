@@ -1,0 +1,32 @@
+# Case-owned N_D=20 Bouzidi D2Q9 channel-cylinder short identity.
+# Re_D=20 is represented by the channel-height closure Re_H=82.
+
+channel_cylinder.variant = single_bouzidi
+channel_cylinder.diameter_intervals = 20
+channel_cylinder.depth_cells = 1
+channel_cylinder.rho_lb = 1.0
+channel_cylinder.u_mean_lb = 0.035
+channel_cylinder.u_mean_phys = 0.2
+channel_cylinder.reynolds_height = 82
+
+mesh.max_grid_size = 64
+
+run.max_step = 2
+run.final_time_phys = 1.0
+run.kind = smoke
+run.variant = d2q9_single_bouzidi_nd20_short
+
+diagnostics.interval = 2
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-8
+diagnostics.stop_on_steady = 0
+
+channel_cylinder_observation.force_interval = 1
+channel_cylinder_observation.output_interval = 10
+channel_cylinder_observation.write_history = 0
+channel_cylinder_observation.assert = 0
+
+output.directory = showcases/channel_cylinder/outputs
+output.log_directory = showcases/channel_cylinder/log
+output.plot_interval = 0
+output.write_final_plotfile = 0

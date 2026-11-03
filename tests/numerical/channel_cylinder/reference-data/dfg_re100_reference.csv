@@ -1,0 +1,9 @@
+metric,value,relative_tolerance,status_group
+St,0.3018867925,0.02,strouhal
+Cd_min,3.1642636519,0.02,combined
+Cd_max,3.2273925778,0.02,combined
+Cd_midrange,3.1958281148,0.02,combined
+Cd_peak_to_peak,0.0631289259,0.10,combined
+Cl_min,-1.0212877562,0.05,combined
+Cl_max,0.9865707016,0.05,combined
+Cl_peak_to_peak,2.0078584578,0.10,combined

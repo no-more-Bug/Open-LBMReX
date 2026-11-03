@@ -1,0 +1,6 @@
+# D3Q27 is selected by the executable; z is periodic with Lz=1/32.
+case.layout = amr
+mesh.max_grid_size = 64
+run.max_step = -1
+amrex.omp_threads = 1
+amrex.use_gpu_aware_mpi = 0

@@ -1,0 +1,18 @@
+# Test-owned direct D2Q9 Taylor-Green short fixture.
+taylor_green.n_cell = 16 16 1
+taylor_green.parameterization = from_nu_lb
+taylor_green.rho_lb = 1.0
+taylor_green.u_ref_lb = 0.01
+taylor_green.u_ref_phys = 1.0
+taylor_green.nu_lb = 0.01
+taylor_green.velocity_amplitude_lb = 0.01
+mesh.max_grid_size = 8
+run.max_step = 2
+run.final_time_phys = 1.0
+run.kind = regression
+run.variant = d2q9_periodic_2d_short
+run.convergence_enabled = 0
+run.convergence_reset = 0
+diagnostics.interval = 1
+output.plot_interval = 0
+output.write_final_plotfile = 0

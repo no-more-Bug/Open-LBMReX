@@ -1,0 +1,8 @@
+# Tests-owned D2Q9 DFG-derived boundary baseline, introduced for Stage 5.02.
+run.max_step = 1000
+profiling.warmup_steps = 100
+profiling.measurement_steps = 900
+performance.workload = dfg_d2q9
+performance.mode = baseline
+performance.repeat = 1
+performance.output_csv = cpu_mpi_baseline_dfg_d2q9_r1.csv

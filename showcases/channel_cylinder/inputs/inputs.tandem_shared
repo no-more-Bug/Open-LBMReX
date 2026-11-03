@@ -1,0 +1,32 @@
+# Case-owned N_D=20 YMS tandem-cylinder shared-ObjectId identity.
+# Historical Stage 4.7 B3 horizon; not a short CI command.
+
+channel_cylinder.variant = tandem_shared
+channel_cylinder.diameter_intervals = 20
+channel_cylinder.depth_cells = 1
+channel_cylinder.rho_lb = 1.0
+channel_cylinder.u_mean_lb = 0.035
+channel_cylinder.u_mean_phys = 0.2
+channel_cylinder.reynolds_height = 82
+
+mesh.max_grid_size = 64
+
+run.max_step = 10000
+run.final_time_phys = 8.75
+run.kind = validation
+run.variant = d2q9_yms_nd20_shared
+
+diagnostics.interval = 1000
+diagnostics.steady_check_interval = 0
+diagnostics.steady_l2_tolerance = 5.0e-7
+diagnostics.stop_on_steady = 0
+
+channel_cylinder_observation.force_interval = 1
+channel_cylinder_observation.output_interval = 100
+channel_cylinder_observation.write_history = 1
+channel_cylinder_observation.assert = 0
+
+output.directory = showcases/channel_cylinder/outputs
+output.log_directory = showcases/channel_cylinder/log
+output.plot_interval = 0
+output.write_final_plotfile = 1

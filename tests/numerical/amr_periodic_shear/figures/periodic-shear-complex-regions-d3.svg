@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+<title id="title">三维：对应的粗网格区和细网格区</title><desc id="desc">左列的蓝色细区是缺一个角的立方体，灰色角块仍为粗网格流体。中列通过透明蓝色外表面显示被包围的灰色粗流体立方体。右列显示贯穿xy的三段蓝色带，其中上、下两段A经z周期相连，中间B独立。下排为y=5L/8处的x-z剖面，验证三维区域的内部形状。</desc>
+<defs><style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#203044}
+.title{font-size:34px;font-weight:700}.heading{font-size:26px;font-weight:700}
+.body{font-size:22px}.small{font-size:18px;fill:#526174}
+.label{font-size:24px;font-weight:700}.axis{font-size:17px;fill:#526174}
+</style>
+<pattern id="coarse" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#aebac7" stroke-width=".7"/></pattern>
+<pattern id="fine" width="12.5" height="12.5" patternUnits="userSpaceOnUse"><path d="M12.5 0H0V12.5" fill="none" stroke="#6d9fca" stroke-width=".55" stroke-opacity=".5"/></pattern>
+<marker id="periodArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#8053ae"/></marker>
+</defs>
+<rect x="0" y="0" width="1800" height="1200" fill="#f6f8fb"/>
+<text x="42" y="58" class="title">三维：对应的粗网格区和细网格区</text>
+<text x="42" y="102" class="body">先看颜色：蓝色用细网格，灰色用粗网格。所有区域都有流体。</text>
+<rect x="43" y="123" width="30" height="23" fill="#cce3fa" stroke="#719cc5" rx="3"/>
+<text x="86" y="142" class="small">细网格 L1</text>
+<rect x="260" y="123" width="30" height="23" fill="#edf1f5" stroke="#aebac7" rx="3"/>
+<text x="303" y="142" class="small">粗网格 L0</text>
+<path d="M478 135L514 135" fill="none" stroke="#d77520" stroke-width="3"/>
+<text x="528" y="142" class="small">粗细交界</text>
+<path d="M706 135L742 135" fill="none" stroke="#8053ae" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="756" y="142" class="small">周期连接</text>
+<text x="1754" y="142" class="small" text-anchor="end">目标几何已确认 · 尚未生成实际网格</text>
+<rect x="30" y="174" width="560" height="964" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="55" y="218" class="heading">① 一个角保持粗网格</text>
+<text x="55" y="252" class="small">突出蓝色细区；虚线角块使用粗网格。</text>
+<g id="d3-corner" data-geometry-status="confirmed-target" data-slice-y="0.625">
+<polygon points="470,590 310,666 310,446 470,370" fill="#edf1f5" fill-opacity="0.22"/>
+<polygon points="150,590 310,666 310,446 150,370" fill="#edf1f5" fill-opacity="0.22"/>
+<polygon points="310,294 470,370 310,446 150,370" fill="#edf1f5" fill-opacity="0.22"/>
+<path d="M310 514L470 590" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M310 294L470 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M150 590L310 666" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M150 370L310 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M310 514L150 590" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M310 294L150 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M470 590L310 666" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M470 370L310 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M310 514L310 294" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M150 590L150 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M470 590L470 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M310 666L310 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<polygon points="310,340.5 370,369 310,397.5 250,369" fill="#d4e8fc"/>
+<polygon points="190,562.5 250,591 250,508.5 190,480" fill="#8ebce5"/>
+<polygon points="430,562.5 370,591 370,508.5 430,480" fill="#b4d5f3"/>
+<polygon points="370,369 430,397.5 370,426 310,397.5" fill="#d4e8fc"/>
+<polygon points="250,369 310,397.5 250,426 190,397.5" fill="#d4e8fc"/>
+<polygon points="430,480 370,508.5 370,426 430,397.5" fill="#b4d5f3"/>
+<polygon points="310,480 370,508.5 370,426 310,397.5" fill="#8ebce5"/>
+<polygon points="310,480 250,508.5 250,426 310,397.5" fill="#b4d5f3"/>
+<polygon points="190,480 250,508.5 250,426 190,397.5" fill="#8ebce5"/>
+<polygon points="310,480 370,508.5 310,537 250,508.5" fill="#d4e8fc"/>
+<polygon points="370,591 310,619.5 310,537 370,508.5" fill="#b4d5f3"/>
+<polygon points="250,591 310,619.5 310,537 250,508.5" fill="#8ebce5"/>
+<path d="M310 340.5L370 369" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 340.5L250 369" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M190 562.5L250 591" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M190 562.5L190 480" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M430 562.5L370 591" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M430 562.5L430 480" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M370 369L430 397.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M430 397.5L370 426" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 397.5L370 426" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 397.5L250 426" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M190 397.5L250 426" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M250 369L190 397.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M370 508.5L370 426" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M430 480L430 397.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 480L370 508.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 480L310 397.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 480L250 508.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M250 508.5L250 426" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M190 480L190 397.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M370 508.5L310 537" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M250 508.5L310 537" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M370 591L310 619.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 619.5L310 537" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M250 591L310 619.5" fill="none" stroke="#d77520" stroke-width="2.1"/>
+<path d="M310 480L370 508.5" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M310 397.5L370 426" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M250 508.5L310 537" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M250 426L310 454.5" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M310 480L250 508.5" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M310 397.5L250 426" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M370 508.5L310 537" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M370 426L310 454.5" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M310 480L310 397.5" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M250 508.5L250 426" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M370 508.5L370 426" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<path d="M310 537L310 454.5" fill="none" stroke="#66788b" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="310" y="471.36" class="small" text-anchor="middle">粗格缺角</text>
+<text x="55" y="715" class="body">蓝色部分在三维中连成一体。</text>
+<text x="55" y="749" class="small">灰色角块仍有流体，用粗网格计算。</text>
+<text x="487" y="591" class="axis">x</text>
+<text x="130" y="591" class="axis" text-anchor="end">y</text>
+<text x="319" y="286" class="axis">z</text>
+<text x="55" y="798" class="small">在 y = 5L/8 处看 x-z 剖面：</text>
+<rect x="200" y="827" width="220" height="220" fill="#edf1f5"/>
+<polygon points="227.5,1019.5 392.5,1019.5 392.5,937 310,937 310,854.5 227.5,854.5" fill="#cce3fa"/>
+<polygon points="227.5,1019.5 392.5,1019.5 392.5,937 310,937 310,854.5 227.5,854.5" fill="none" stroke="#d77520" stroke-width="3"/>
+<rect x="200" y="827" width="220" height="220" fill="none" stroke="#34495e"/>
+<text x="185" y="817" class="axis">z</text>
+<text x="433" y="1053" class="axis">x</text>
+<text x="351.25" y="902.75" class="small" text-anchor="middle">粗</text>
+<text x="55" y="1098" class="small">蓝色与灰色共同覆盖流体域，均参与演化。</text>
+</g>
+<rect x="620" y="174" width="560" height="964" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="645" y="218" class="heading">② 中央灰块保持粗网格</text>
+<text x="645" y="252" class="small">透视显示内部：蓝色细区包围灰块。</text>
+<g id="d3-hole" data-geometry-status="confirmed-target" data-slice-y="0.625">
+<polygon points="1060,590 900,666 900,446 1060,370" fill="#edf1f5" fill-opacity="0.22"/>
+<polygon points="740,590 900,666 900,446 740,370" fill="#edf1f5" fill-opacity="0.22"/>
+<polygon points="900,294 1060,370 900,446 740,370" fill="#edf1f5" fill-opacity="0.22"/>
+<path d="M900 514L1060 590" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M900 294L1060 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M740 590L900 666" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M740 370L900 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M900 514L740 590" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M900 294L740 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1060 590L900 666" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1060 370L900 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M900 514L900 294" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M740 590L740 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1060 590L1060 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M900 666L900 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<polygon points="1020,562.5 900,619.5 900,454.5 1020,397.5" fill="#a8cdec" fill-opacity="0.36"/>
+<polygon points="780,562.5 900,619.5 900,454.5 780,397.5" fill="#91bfe7" fill-opacity="0.36"/>
+<polygon points="900,340.5 1020,397.5 900,454.5 780,397.5" fill="#cfe6fc" fill-opacity="0.36"/>
+<path d="M900 505.5L1020 562.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M900 340.5L1020 397.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M780 562.5L900 619.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M780 397.5L900 454.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M900 505.5L780 562.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M900 340.5L780 397.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1020 562.5L900 619.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1020 397.5L900 454.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M900 505.5L900 340.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M780 562.5L780 397.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1020 562.5L1020 397.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M900 619.5L900 454.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<polygon points="960,521.25 900,549.75 900,467.25 960,438.75" fill="#dce2e9" fill-opacity="1"/>
+<polygon points="840,521.25 900,549.75 900,467.25 840,438.75" fill="#becad7" fill-opacity="1"/>
+<polygon points="900,410.25 960,438.75 900,467.25 840,438.75" fill="#f0f3f6" fill-opacity="1"/>
+<path d="M900 492.75L960 521.25" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M900 410.25L960 438.75" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M840 521.25L900 549.75" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M840 438.75L900 467.25" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M900 492.75L840 521.25" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M900 410.25L840 438.75" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M960 521.25L900 549.75" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M960 438.75L900 467.25" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M900 492.75L900 410.25" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M840 521.25L840 438.75" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M960 521.25L960 438.75" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<path d="M900 549.75L900 467.25" fill="none" stroke="#d77520" stroke-width="1.8"/>
+<text x="900" y="495" class="label" text-anchor="middle">粗格</text>
+<text x="645" y="715" class="body">中央灰块的六个方向都被细区包围。</text>
+<text x="645" y="749" class="small">透明蓝色只是显示方式，没有删除网格。</text>
+<text x="1077" y="591" class="axis">x</text>
+<text x="720" y="591" class="axis" text-anchor="end">y</text>
+<text x="909" y="286" class="axis">z</text>
+<text x="645" y="798" class="small">在 y = 5L/8 处看 x-z 剖面：</text>
+<rect x="790" y="827" width="220" height="220" fill="#edf1f5"/>
+<rect x="817.5" y="854.5" width="165" height="165" fill="#cce3fa"/>
+<rect x="817.5" y="854.5" width="165" height="165" fill="none" stroke="#d77520"/>
+<rect x="858.75" y="895.75" width="82.5" height="82.5" fill="#edf1f5"/>
+<rect x="858.75" y="895.75" width="82.5" height="82.5" fill="none" stroke="#d77520"/>
+<rect x="790" y="827" width="220" height="220" fill="none" stroke="#34495e"/>
+<text x="775" y="817" class="axis">z</text>
+<text x="1023" y="1053" class="axis">x</text>
+<text x="900" y="944" class="small" text-anchor="middle">粗格</text>
+<text x="645" y="1098" class="small">蓝色与灰色共同覆盖流体域，均参与演化。</text>
+</g>
+<rect x="1210" y="174" width="560" height="964" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="1235" y="218" class="heading">③ 两个分离的细网格区</text>
+<text x="1235" y="252" class="small">上、下 A 经 z 周期相连；B 独立。</text>
+<g id="d3-periodic" data-geometry-status="confirmed-target" data-slice-y="0.625">
+<polygon points="1650,590 1490,666 1490,446 1650,370" fill="#edf1f5" fill-opacity="0.22"/>
+<polygon points="1330,590 1490,666 1490,446 1330,370" fill="#edf1f5" fill-opacity="0.22"/>
+<polygon points="1490,294 1650,370 1490,446 1330,370" fill="#edf1f5" fill-opacity="0.22"/>
+<path d="M1490 514L1650 590" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1490 294L1650 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1330 590L1490 666" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1330 370L1490 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1490 514L1330 590" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1490 294L1330 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1650 590L1490 666" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1650 370L1490 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1490 514L1490 294" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1330 590L1330 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1650 590L1650 370" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<path d="M1490 666L1490 446" fill="none" stroke="#a9b7c5" stroke-width="1.25" stroke-dasharray="5 5"/>
+<polygon points="1650,590 1490,666 1490,446 1650,370" fill="#dde4ec" fill-opacity="1"/>
+<polygon points="1330,590 1490,666 1490,446 1330,370" fill="#cbd5e0" fill-opacity="1"/>
+<polygon points="1490,294 1650,370 1490,446 1330,370" fill="#e8eef5" fill-opacity="1"/>
+<polygon points="1650,590 1490,666 1490,638.5 1650,562.5" fill="#b4d5f3"/>
+<polygon points="1330,590 1490,666 1490,638.5 1330,562.5" fill="#8ebce5"/>
+<polygon points="1650,507.5 1490,583.5 1490,528.5 1650,452.5" fill="#b4d5f3"/>
+<polygon points="1330,507.5 1490,583.5 1490,528.5 1330,452.5" fill="#8ebce5"/>
+<polygon points="1650,397.5 1490,473.5 1490,446 1650,370" fill="#b4d5f3"/>
+<polygon points="1330,397.5 1490,473.5 1490,446 1330,370" fill="#8ebce5"/>
+<polygon points="1490,294 1650,370 1490,446 1330,370" fill="#d4e8fc"/>
+<path d="M1650 562.5L1490 638.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1490 638.5L1330 562.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1650 507.5L1490 583.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1490 583.5L1330 507.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1650 452.5L1490 528.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1490 528.5L1330 452.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1650 397.5L1490 473.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1490 473.5L1330 397.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1490 514L1650 590" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1650 590L1490 666" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1490 666L1330 590" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1330 590L1490 514" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1490 294L1650 370" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1650 370L1490 446" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1490 446L1330 370" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<path d="M1330 370L1490 294" fill="none" stroke="#8053ae" stroke-width="2.5" stroke-dasharray="7 4"/>
+<text x="1560.4" y="433.31" class="label" text-anchor="middle">A</text>
+<text x="1560.4" y="529.56" class="label" text-anchor="middle">B</text>
+<text x="1560.4" y="625.81" class="label" text-anchor="middle">A</text>
+<path d="M1322 590H1290V370H1322" fill="none" stroke="#8053ae" stroke-width="2.2" marker-start="url(#periodArrow)" marker-end="url(#periodArrow)"/>
+<text x="1278" y="468" class="small" text-anchor="end" style="fill:#8053ae">周期</text>
+<text x="1278" y="497" class="small" text-anchor="end" style="fill:#8053ae">A ↔ A</text>
+<text x="1235" y="715" class="body">从基本域看是三段，从周期域看是两区。</text>
+<text x="1235" y="749" class="small">周期接缝处是细网格对细网格。</text>
+<text x="1667" y="591" class="axis">x</text>
+<text x="1310" y="591" class="axis" text-anchor="end">y</text>
+<text x="1499" y="286" class="axis">z</text>
+<text x="1235" y="798" class="small">在 y = 5L/8 处看 x-z 剖面：</text>
+<rect x="1380" y="827" width="220" height="220" fill="#edf1f5"/>
+<rect x="1380" y="1019.5" width="220" height="27.5" fill="#cce3fa"/>
+<rect x="1380" y="909.5" width="220" height="55" fill="#cce3fa"/>
+<rect x="1380" y="827" width="220" height="27.5" fill="#cce3fa"/>
+<path d="M1380 1019.5L1600 1019.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1380 964.5L1600 964.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1380 909.5L1600 909.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<path d="M1380 854.5L1600 854.5" fill="none" stroke="#d77520" stroke-width="2"/>
+<rect x="1380" y="827" width="220" height="220" fill="none" stroke="#34495e"/>
+<path d="M1380 1047L1600 1047" fill="none" stroke="#8053ae" stroke-width="3" stroke-dasharray="7 4"/>
+<path d="M1380 827L1600 827" fill="none" stroke="#8053ae" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="1365" y="817" class="axis">z</text>
+<text x="1613" y="1053" class="axis">x</text>
+<text x="1490" y="846.75" class="small" text-anchor="middle">A</text>
+<text x="1490" y="943" class="small" text-anchor="middle">B</text>
+<text x="1490" y="1039.25" class="small" text-anchor="middle">A</text>
+<text x="1235" y="1098" class="small">蓝色与灰色共同覆盖流体域，均参与演化。</text>
+</g>
+<text x="42" y="1176" class="small">三维图使用透视/透明显示帮助看清内部；下排剖面按已确认目标区间绘制。实际覆盖待生成，非数值结果。</text>
+</svg>

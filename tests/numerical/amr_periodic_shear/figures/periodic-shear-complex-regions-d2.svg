@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+<title id="title">二维：三种加密区域，灰色部分也有流体</title><desc id="desc">三列按归一化坐标显示L形细区、围住粗流体的细网格方框、两个周期意义下分离的细网格带。前两列外边界为1/8至7/8，缺角为1/2至7/8，中心粗区为5/16至11/16。第三列左右两端A通过周期边界相连，中间B独立。</desc>
+<defs><style>
+text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#203044}
+.title{font-size:34px;font-weight:700}.heading{font-size:26px;font-weight:700}
+.body{font-size:22px}.small{font-size:18px;fill:#526174}
+.label{font-size:24px;font-weight:700}.axis{font-size:17px;fill:#526174}
+</style>
+<pattern id="coarse" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#aebac7" stroke-width=".7"/></pattern>
+<pattern id="fine" width="12.5" height="12.5" patternUnits="userSpaceOnUse"><path d="M12.5 0H0V12.5" fill="none" stroke="#6d9fca" stroke-width=".55" stroke-opacity=".5"/></pattern>
+<marker id="periodArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#8053ae"/></marker>
+</defs>
+<rect x="0" y="0" width="1800" height="1000" fill="#f6f8fb"/>
+<text x="42" y="58" class="title">二维：三种加密区域，灰色部分也有流体</text>
+<text x="42" y="102" class="body">先看颜色：蓝色用细网格，灰色用粗网格。所有区域都有流体。</text>
+<rect x="43" y="123" width="30" height="23" fill="#cce3fa" stroke="#719cc5" rx="3"/>
+<text x="86" y="142" class="small">细网格 L1</text>
+<rect x="260" y="123" width="30" height="23" fill="#edf1f5" stroke="#aebac7" rx="3"/>
+<text x="303" y="142" class="small">粗网格 L0</text>
+<path d="M478 135L514 135" fill="none" stroke="#d77520" stroke-width="3"/>
+<text x="528" y="142" class="small">粗细交界</text>
+<path d="M706 135L742 135" fill="none" stroke="#8053ae" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="756" y="142" class="small">周期连接</text>
+<text x="1754" y="142" class="small" text-anchor="end">目标几何已确认 · 尚未生成实际网格</text>
+<rect x="30" y="174" width="560" height="770" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="55" y="218" class="heading">① 让一个角保持粗网格</text>
+<text x="55" y="252" class="small">蓝色形成 L 形，右上角保持粗格。</text>
+<g id="d2-corner" data-geometry-status="confirmed-target">
+<rect x="110" y="294" width="400" height="400" fill="#edf1f5"/>
+<rect x="110" y="294" width="400" height="400" fill="url(#coarse)"/>
+<polygon points="160,644 460,644 460,494 310,494 310,344 160,344" fill="#cce3fa"/>
+<polygon points="160,644 460,644 460,494 310,494 310,344 160,344" fill="url(#fine)"/>
+<polygon points="160,644 460,644 460,494 310,494 310,344 160,344" fill="none" stroke="#d77520" stroke-width="3"/>
+<rect x="110" y="294" width="400" height="400" fill="none" stroke="#34495e"/>
+<text x="110" y="725" class="axis" text-anchor="middle">0</text>
+<text x="95" y="700" class="axis" text-anchor="end">0</text>
+<text x="310" y="725" class="axis" text-anchor="middle">1/2</text>
+<text x="95" y="500" class="axis" text-anchor="end">1/2</text>
+<text x="510" y="725" class="axis" text-anchor="middle">1</text>
+<text x="95" y="300" class="axis" text-anchor="end">1</text>
+<text x="81" y="279" class="axis">y/L</text>
+<text x="525" y="725" class="axis">x/L</text>
+<rect x="320" y="388" width="135" height="66" fill="#edf1f5" rx="6"/>
+<text x="387.5" y="414" class="body" text-anchor="middle">这个角</text>
+<text x="387.5" y="444" class="body" text-anchor="middle">保持粗网格</text>
+<rect x="219" y="543" width="181" height="38" fill="#cce3fa" rx="6"/>
+<text x="309.5" y="571" class="label" text-anchor="middle">细网格 L1</text>
+<text x="55" y="791" class="body">相连的蓝色部分是一整个细区。</text>
+<text x="55" y="832" class="body">凹进去的拐角也是粗细交界。</text>
+</g>
+<text x="55" y="897" class="small">区域按目标比例画出；格线仅示意粗细差别。</text>
+<rect x="620" y="174" width="560" height="770" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="645" y="218" class="heading">② 让中间保持粗网格</text>
+<text x="645" y="252" class="small">蓝色围成一圈，中央保持粗格。</text>
+<g id="d2-hole" data-geometry-status="confirmed-target">
+<rect x="700" y="294" width="400" height="400" fill="#edf1f5"/>
+<rect x="700" y="294" width="400" height="400" fill="url(#coarse)"/>
+<rect x="750" y="344" width="300" height="300" fill="#cce3fa"/>
+<rect x="750" y="344" width="300" height="300" fill="url(#fine)"/>
+<rect x="750" y="344" width="300" height="300" fill="none" stroke="#d77520"/>
+<rect x="825" y="419" width="150" height="150" fill="#edf1f5"/>
+<rect x="825" y="419" width="150" height="150" fill="url(#coarse)"/>
+<rect x="825" y="419" width="150" height="150" fill="none" stroke="#d77520"/>
+<rect x="700" y="294" width="400" height="400" fill="none" stroke="#34495e"/>
+<text x="700" y="725" class="axis" text-anchor="middle">0</text>
+<text x="685" y="700" class="axis" text-anchor="end">0</text>
+<text x="900" y="725" class="axis" text-anchor="middle">1/2</text>
+<text x="685" y="500" class="axis" text-anchor="end">1/2</text>
+<text x="1100" y="725" class="axis" text-anchor="middle">1</text>
+<text x="685" y="300" class="axis" text-anchor="end">1</text>
+<text x="671" y="279" class="axis">y/L</text>
+<text x="1115" y="725" class="axis">x/L</text>
+<rect x="830" y="458" width="140" height="70" fill="#edf1f5" rx="6"/>
+<text x="900" y="488" class="body" text-anchor="middle">粗网格流体</text>
+<text x="900" y="517" class="small" text-anchor="middle">不是固体或空洞</text>
+<text x="900" y="622" class="label" text-anchor="middle">细网格 L1</text>
+<text x="645" y="791" class="body">中央灰区被蓝色细区完整包围。</text>
+<text x="645" y="832" class="body">外圈和内圈都有粗细交界。</text>
+</g>
+<text x="645" y="897" class="small">区域按目标比例画出；格线仅示意粗细差别。</text>
+<rect x="1210" y="174" width="560" height="770" fill="white" stroke="#d5dde7" rx="18"/>
+<text x="1235" y="218" class="heading">③ 两个分离的细网格区</text>
+<text x="1235" y="252" class="small">两端 A 相连，中间 B 是另一个区。</text>
+<g id="d2-periodic" data-geometry-status="confirmed-target">
+<rect x="1290" y="294" width="400" height="400" fill="#edf1f5"/>
+<rect x="1290" y="294" width="400" height="400" fill="url(#coarse)"/>
+<rect x="1290" y="294" width="50" height="400" fill="#cce3fa"/>
+<rect x="1290" y="294" width="50" height="400" fill="url(#fine)"/>
+<rect x="1440" y="294" width="100" height="400" fill="#cce3fa"/>
+<rect x="1440" y="294" width="100" height="400" fill="url(#fine)"/>
+<rect x="1640" y="294" width="50" height="400" fill="#cce3fa"/>
+<rect x="1640" y="294" width="50" height="400" fill="url(#fine)"/>
+<path d="M1340 694L1340 294" fill="none" stroke="#d77520" stroke-width="3"/>
+<path d="M1440 694L1440 294" fill="none" stroke="#d77520" stroke-width="3"/>
+<path d="M1540 694L1540 294" fill="none" stroke="#d77520" stroke-width="3"/>
+<path d="M1640 694L1640 294" fill="none" stroke="#d77520" stroke-width="3"/>
+<rect x="1290" y="294" width="400" height="400" fill="none" stroke="#34495e"/>
+<path d="M1290 694L1290 294" fill="none" stroke="#8053ae" stroke-width="3" stroke-dasharray="7 4"/>
+<path d="M1690 694L1690 294" fill="none" stroke="#8053ae" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="1290" y="725" class="axis" text-anchor="middle">0</text>
+<text x="1275" y="700" class="axis" text-anchor="end">0</text>
+<text x="1490" y="725" class="axis" text-anchor="middle">1/2</text>
+<text x="1275" y="500" class="axis" text-anchor="end">1/2</text>
+<text x="1690" y="725" class="axis" text-anchor="middle">1</text>
+<text x="1275" y="300" class="axis" text-anchor="end">1</text>
+<text x="1261" y="279" class="axis">y/L</text>
+<text x="1705" y="725" class="axis">x/L</text>
+<rect x="1297" y="472" width="36" height="40" fill="white" rx="5"/>
+<text x="1315" y="501" class="label" text-anchor="middle">A</text>
+<rect x="1472" y="472" width="36" height="40" fill="white" rx="5"/>
+<text x="1490" y="501" class="label" text-anchor="middle">B</text>
+<rect x="1647" y="472" width="36" height="40" fill="white" rx="5"/>
+<text x="1665" y="501" class="label" text-anchor="middle">A</text>
+<text x="1390" y="503" class="body" text-anchor="middle">粗格</text>
+<text x="1590" y="503" class="body" text-anchor="middle">粗格</text>
+<path d="M1315 702V750H1665V702" fill="none" stroke="#8053ae" stroke-width="2.2" marker-start="url(#periodArrow)" marker-end="url(#periodArrow)"/>
+<text x="1490" y="741" class="small" text-anchor="middle" style="fill:#8053ae">左右边界接起来：A ↔ A</text>
+<text x="1235" y="791" class="body">基本域中看到三条蓝带；</text>
+<text x="1235" y="832" class="body">跨周期连接后只有 A、B 两个细区。</text>
+</g>
+<text x="1235" y="897" class="small">区域按目标比例画出；格线仅示意粗细差别。</text>
+<text x="42" y="979" class="small">图中显示每个位置起作用的网格层级；整个流体域始终都有解。三种目标布局已确认，实际覆盖待生成。</text>
+</svg>

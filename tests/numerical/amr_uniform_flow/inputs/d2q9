@@ -1,0 +1,5 @@
+# Composition is fixed in UniformFlowCase.H; these are execution controls.
+mesh.max_grid_size = 16
+run.max_step = -1
+amrex.omp_threads = 1
+amrex.use_gpu_aware_mpi = 0

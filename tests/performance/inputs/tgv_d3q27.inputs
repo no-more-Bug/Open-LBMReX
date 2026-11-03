@@ -1,0 +1,8 @@
+# Tests-owned D3Q27 quasi-2D periodic TGV baseline, introduced for Stage 5.02.
+run.max_step = 1000
+profiling.warmup_steps = 100
+profiling.measurement_steps = 900
+performance.workload = tgv_d3q27
+performance.mode = baseline
+performance.repeat = 1
+performance.output_csv = cpu_mpi_baseline_tgv_d3q27_r1.csv
