@@ -4,7 +4,19 @@
 
 Open-LBMReX 是基于 AMReX 的研究型格子 Boltzmann 代码库，提供 D2Q9／D3Q27 算例组合、CPU／MPI 与 NVIDIA CUDA 构建路线、cell-centered 块结构 AMR，以及边界、力和流动问题的测试与示例。代码、CMake 工程和可执行目标仍使用 LBMReX 名称。
 
-**`v0.1.0` 实验性快照。** 独立源码快照及新 AMReX 安装包已完成所选 CPU／MPI 与 CUDA 构建和运行检查。动态 AMR 属于实验性能力；必须结合[验证范围](docs/validation.md)与[已知限制](docs/known-limitations.md)解释结果，程序正常退出不等于科学验证通过。
+**`v0.1.0` 发布预览，实验性快照。** 独立源码快照及新 AMReX 安装包已完成所选 CPU／MPI 与 CUDA 构建和运行检查。动态 AMR 属于实验性能力；必须结合[验证范围](docs/validation.md)与[已知限制](docs/known-limitations.md)解释结果，程序正常退出不等于科学验证通过。
+
+## AMR 效果展示
+
+下面两张二维动图来自此前的开发运行，展示 AMR 网格随流场变化的过程，黑线表示 AMR 块边界。这些是直观示例，不是本发布版本新增的验证结果；[已知限制](docs/known-limitations.md)仍然适用。
+
+**双剪切层（DSL）**：涡量场，固定 L1 带与随流场调整的细化区域，`t/t_c = 0–2`。
+
+![二维双剪切层：涡量场与动态 AMR 块边界](docs/media/amr/double-shear-layer-2d.gif)
+
+**DFG 通道圆柱绕流**：涡脱落过程中的归一化速度场与尾迹细化区域，`t = 28–35`。
+
+![二维 DFG 圆柱绕流：归一化速度场与动态 AMR 块边界](docs/media/amr/dfg-cylinder-2d.gif)
 
 ## 项目初衷与发布方式
 
