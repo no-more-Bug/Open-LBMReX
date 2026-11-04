@@ -4,7 +4,7 @@
 
 Open-LBMReX is a research lattice Boltzmann codebase built on [AMReX](https://github.com/AMReX-Codes/amrex). It provides D2Q9 and D3Q27 case compositions, CPU/MPI and NVIDIA CUDA build routes, cell-centered block-structured AMR, and tests and examples for flow, boundaries and force measurement. The CMake project, C++ interfaces and executable names retain the name **LBMReX**.
 
-**Preview for `v0.1.0` — experimental snapshot.** Selected standalone CPU/MPI and CUDA build/run checks have passed with fresh AMReX installation packages. Dynamic AMR is experimental. Read the [validation scope](docs/validation.md) and [known limitations](docs/known-limitations.md) before interpreting a successful run as scientific acceptance.
+**Version `v0.1.0` — experimental snapshot.** Selected standalone CPU/MPI and CUDA build/run checks have passed with fresh AMReX installation packages. Dynamic AMR is experimental. Read the [validation scope](docs/validation.md) and [known limitations](docs/known-limitations.md) before interpreting a successful run as scientific acceptance.
 
 ## AMR in action
 

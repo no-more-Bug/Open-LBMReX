@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 — Unreleased
+## 0.1.0 — 2026-11-04
 
 Initial curated source snapshot with independent repository history.
 
@@ -15,7 +15,7 @@ Initial curated source snapshot with independent repository history.
 
 ### Validation and limitations
 
-Selected standalone checks passed with fresh CPU/CUDA AMReX packages. The CPU 90-test and CUDA 80-test matrices ran at `e90c004`; CUDA showcase/performance checks and an ordinary CPU source archive ran at `fe75e2b` after the four-showcase CMake correction. The version commit adds documentation and citation metadata to the tested code. See [validation](docs/validation.md) for exact source identities, toolchains, test selection and the basis for retaining the earlier matrix evidence.
+Selected standalone checks passed with fresh CPU/CUDA AMReX packages. The CPU 90-test and CUDA 80-test matrices ran at `e90c004`; CUDA showcase/performance checks and an ordinary CPU source archive ran at `fe75e2b` after the four-showcase CMake correction. The release adds documentation, citation metadata and illustrative animations to the tested code. See [validation](docs/validation.md) for exact source identities, toolchains, test selection and the basis for retaining the earlier matrix evidence.
 
 Five D2 showcases ran on CPU and CUDA. Fourteen D2 performance smoke processes exercised real artifacts and consumers; they are not formal benchmarks or speedup results. D3 showcase/performance targets were compiled, but their runtime behavior was not tested in this release validation.
 

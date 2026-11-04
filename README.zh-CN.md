@@ -4,7 +4,7 @@
 
 Open-LBMReX 是基于 AMReX 的研究型格子 Boltzmann 代码库，提供 D2Q9／D3Q27 算例组合、CPU／MPI 与 NVIDIA CUDA 构建路线、cell-centered 块结构 AMR，以及边界、力和流动问题的测试与示例。代码、CMake 工程和可执行目标仍使用 LBMReX 名称。
 
-**`v0.1.0` 发布预览，实验性快照。** 独立源码快照及新 AMReX 安装包已完成所选 CPU／MPI 与 CUDA 构建和运行检查。动态 AMR 属于实验性能力；必须结合[验证范围](docs/validation.md)与[已知限制](docs/known-limitations.md)解释结果，程序正常退出不等于科学验证通过。
+**`v0.1.0` 实验性快照。** 独立源码快照及新 AMReX 安装包已完成所选 CPU／MPI 与 CUDA 构建和运行检查。动态 AMR 属于实验性能力；必须结合[验证范围](docs/validation.md)与[已知限制](docs/known-limitations.md)解释结果，程序正常退出不等于科学验证通过。
 
 ## AMR 效果展示
 
