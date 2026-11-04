@@ -22,7 +22,7 @@ Check both identities against the values above. The [preparation script](../../s
 
 The preparation tree's `.lbmrex-dependency` records the base SHA, patch digest and filename. CPU/CUDA build and install directories remain separate; their full package configurations and toolchains also belong in provenance. Follow [building](../../docs/building.md). The application continues to use `find_package(AMReX)`; it does not implicitly patch the submodule during configure or execution.
 
-Successful patch application is not proof of a validated CPU/CUDA installation. The standalone snapshot's package/build/run checks remain [pending](../../docs/validation.md). Do not apply this patch blindly to a different AMReX revision.
+Successful patch application is not proof of a validated CPU/CUDA installation. Fresh CPU/CUDA packages were built and exercised in the [selected standalone checks](../../docs/validation.md); those results apply to the recorded configuration and source. Do not apply this patch blindly to a different AMReX revision.
 
 ## Upstream notices
 

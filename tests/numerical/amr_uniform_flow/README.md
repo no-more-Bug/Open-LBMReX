@@ -17,7 +17,7 @@ bash tests/numerical/amr_uniform_flow/run.sh \
   "$(command -v mpirun)" d2
 ```
 
-This is an explicit eight-step engineering check, with one OpenMP thread per rank. Use an appropriate allocated CPU/MPI environment. The runner obtains a strict source identity as described in the [common contract](../README.md). Standalone snapshot execution remains [pending](../../../docs/validation.md).
+This is an explicit eight-step engineering check, with one OpenMP thread per rank. Use an appropriate allocated CPU/MPI environment. The runner obtains a strict source identity as described in the [common contract](../README.md). The selected CPU/CUDA eight-step routes and the CPU source-archive route have [standalone evidence](../../../docs/validation.md); full scientific runs are separate.
 
 ## Complete comparison and artifacts
 

@@ -1,6 +1,6 @@
 # Performance tools
 
-This tests-owned harness measures fixed engineering workloads. It is not a numerical acceptance suite, a general hardware benchmark or evidence of equal-accuracy speedup. Independent builds and real performance smoke artifacts for the standalone snapshot remain [pending](../../docs/validation.md). Historical platform results are not distributed as current results.
+This tests-owned harness measures fixed engineering workloads. It is not a numerical acceptance suite, a general hardware benchmark or evidence of equal-accuracy speedup. Explicit target builds and selected real CPU/CUDA smoke artifacts passed the [standalone checks](../../docs/validation.md), with D3 execution outside that scope. Historical platform results are not distributed as current results.
 
 ## Build and workload scope
 

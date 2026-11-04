@@ -4,7 +4,7 @@
 
 Open-LBMReX is a research lattice Boltzmann codebase built on [AMReX](https://github.com/AMReX-Codes/amrex). It provides D2Q9 and D3Q27 case compositions, CPU/MPI and NVIDIA CUDA build routes, cell-centered block-structured AMR, and tests and examples for flow, boundaries and force measurement. The CMake project, C++ interfaces and executable names retain the name **LBMReX**.
 
-**Pre-release:** the first version is planned as `v0.1.0`. The standalone snapshot and its new AMReX installation packages still require build/run validation. Dynamic AMR is experimental. Read the [validation scope](docs/validation.md) and [known limitations](docs/known-limitations.md) before interpreting a successful run as scientific acceptance.
+**Version `v0.1.0` — experimental snapshot.** Selected standalone CPU/MPI and CUDA build/run checks have passed with fresh AMReX installation packages. Dynamic AMR is experimental. Read the [validation scope](docs/validation.md) and [known limitations](docs/known-limitations.md) before interpreting a successful run as scientific acceptance.
 
 ## Project background and release status
 
@@ -63,7 +63,7 @@ Git clone with submodule initialization is the main distribution route. An ordin
 
 ## Known issues and possible future work
 
-**Parallel validation scope:** CPU-side MPI parallel execution has been tested during development. Due to limited computing resources, GPU-side multi-device parallel testing has only covered NVIDIA MIG slice configurations. Parallel execution across multiple full physical GPUs has not been validated, and successful execution or passing tests on such configurations is not guaranteed. These development results do not replace the independent validation still required for this release snapshot and its new AMReX packages.
+**Parallel validation scope:** This snapshot has independent CPU MPI and CUDA engineering evidence, detailed in [validation](docs/validation.md). Due to limited computing resources, GPU-side multi-device testing remains limited to NVIDIA MIG slice configurations; this snapshot's multi-rank runs used MIG instances on one physical A100. Parallel execution across multiple full physical GPUs has not been validated, and successful execution or passing tests on such configurations is not guaranteed.
 
 Current issues that may be addressed in later snapshots include:
 

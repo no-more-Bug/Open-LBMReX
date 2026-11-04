@@ -64,4 +64,4 @@ ctest --test-dir build/cpu -R '^numerical_uniform_flow$' \
 
 The second command is a complete scientific family, not a startup check. For bounded engineering runs use the explicit case examples or registered short integration entries and their actual resource requirements. One CTest driver owns a build tree at a time.
 
-Reference files and small numerical transcriptions retain [attribution and distribution limitations](../../docs/third-party.md). Do not substitute a reference or revise a threshold to turn a failure into a pass. [Known limitations](../../docs/known-limitations.md) and [pending standalone validation](../../docs/validation.md) apply to the whole suite.
+Reference files and small numerical transcriptions retain [attribution and distribution limitations](../../docs/third-party.md). Do not substitute a reference or revise a threshold to turn a failure into a pass. [Known limitations](../../docs/known-limitations.md) and [standalone validation scope](../../docs/validation.md) apply to the whole suite.

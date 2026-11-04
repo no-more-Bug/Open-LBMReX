@@ -25,4 +25,4 @@ This tracked input is a 20-step, 10×10-interval, Nz=1 short case. Other tracked
 
 The local [checker](scripts/check_uniform_flow.py) and [runner](scripts/run_uniform_flow.sh) are manual showcase tools. Short uniform-state preservation does not replace a sufficiently long flow-through comparison. Formal numerical tests independently own their compositions and exact reference in [tests/numerical](../../tests/numerical/README.md); they do not consume showcase outputs implicitly.
 
-CPU/CUDA standalone-snapshot execution remains [pending](../../docs/validation.md).
+The D2Q9 CPU/CUDA 20-step route passed the [selected standalone checks](../../docs/validation.md). D3Q27 evidence here is limited to compilation.

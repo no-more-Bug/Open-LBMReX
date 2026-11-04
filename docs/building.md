@@ -1,6 +1,6 @@
 # Building and running
 
-These instructions describe the intended Linux CPU/MPI and NVIDIA CUDA routes. They have been checked against the pinned source interfaces; independent builds and runs for this standalone snapshot are still [pending](validation.md). Use fresh out-of-source build trees.
+These instructions describe the Linux CPU/MPI and NVIDIA CUDA routes exercised by the [selected standalone validation](validation.md). The recorded toolchains and test scope are specific, not a guarantee for every configuration. Use fresh out-of-source build trees.
 
 ## Requirements
 

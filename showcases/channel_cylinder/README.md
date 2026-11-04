@@ -25,4 +25,4 @@ Inputs expose the case variant, diameter intervals/depth, density/speed/Re scale
 
 [Scientific references](docs/references.md) specify DFG numerical provenance, normalization, complete-horizon/cycle requirements and current acceptance. Re100 combined scientific failures remain; a successful solver exit or passed Strouhal sub-gate does not make the combined comparison pass.
 
-Formal [AMR cylinder tests](../../tests/numerical/amr_channel_cylinder/README.md), experimental dynamic AMR and this single-level showcase are distinct owners. The force-sawtooth and long-run limitations remain visible in [known limitations](../../docs/known-limitations.md). Standalone-snapshot builds/runs are still [pending](../../docs/validation.md).
+Formal [AMR cylinder tests](../../tests/numerical/amr_channel_cylinder/README.md), experimental dynamic AMR and this single-level showcase are distinct owners. The force-sawtooth and long-run limitations remain visible in [known limitations](../../docs/known-limitations.md). The D2Q9 CPU/CUDA 12-step route passed the [selected standalone checks](../../docs/validation.md). D3Q27 evidence here is limited to compilation.
