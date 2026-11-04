@@ -20,3 +20,8 @@ target_compile_definitions(
 set_target_properties(
     lbm_poiseuille_flow_d3q27
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+if(LBM_ENABLE_CUDA)
+    setup_target_for_cuda_compilation(lbm_poiseuille_flow)
+    setup_target_for_cuda_compilation(lbm_poiseuille_flow_d3q27)
+endif()

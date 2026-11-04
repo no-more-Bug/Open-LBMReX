@@ -21,3 +21,8 @@ target_compile_definitions(
 set_target_properties(
     lbm_lid_driven_cavity_d3q27
     PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+if(LBM_ENABLE_CUDA)
+    setup_target_for_cuda_compilation(lbm_lid_driven_cavity)
+    setup_target_for_cuda_compilation(lbm_lid_driven_cavity_d3q27)
+endif()
