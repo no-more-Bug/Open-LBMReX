@@ -8,11 +8,11 @@ Open-LBMReX is a research lattice Boltzmann codebase built on [AMReX](https://gi
 
 ## AMR in action
 
-Two-dimensional examples from earlier development runs illustrate the evolving AMR layout. Black lines mark AMR block boundaries. These animations are visual examples, not new validation results for this release; the [known limitations](docs/known-limitations.md) still apply.
+Examples from earlier development runs illustrate the evolving AMR layout. Black lines mark AMR block boundaries. These animations are visual examples, not new validation results for this release; the [known limitations](docs/known-limitations.md) still apply.
 
-**Double shear layer (DSL)** — vorticity, with a fixed level-1 band and flow-driven refinement; `t/t_c = 0–2`.
+**Double shear layer (DSL)** — a quasi-two-dimensional D3Q27 slice of vorticity. The upper band has a minimum level of L1 and can refine further to L2; `t/t_c = 0–2`.
 
-![Two-dimensional double shear layer: vorticity with evolving AMR block boundaries](docs/media/amr/double-shear-layer-2d.gif)
+![Quasi-two-dimensional double shear layer: minimum-L1 band with L2 refinement](docs/media/amr/double-shear-layer-min-l1.gif)
 
 **DFG channel flow past a cylinder** — normalized speed and the refined wake during vortex shedding; `t = 28–35`.
 

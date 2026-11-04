@@ -8,7 +8,7 @@ Initial curated source snapshot with independent repository history.
 
 - The LBMReX codebase with D2Q9 and D3Q27 case compositions, cell-centered block-structured AMR, boundary handling and force observations.
 - Five single-level showcases, separate test-owned multilevel cases, numerical checkers and performance tools.
-- README animations of two-dimensional double-shear-layer and cylinder-flow AMR from earlier development runs; these are illustrations, not additional release-validation evidence.
+- README animations of quasi-two-dimensional minimum-L1-band double-shear-layer and two-dimensional cylinder-flow AMR from earlier development runs; these are illustrations, not additional release-validation evidence.
 - An official AMReX submodule pinned to `4ceb814db7d79c5858b13dab153fb04ecc3b129d`, with a projected-tag deduplication patch applied to a separate preparation copy.
 - An installation-package build route, English documentation and a Chinese README, reference attribution, and AI-generated architecture and class diagrams.
 - Source identity support for clones and ordinary archives, portable artifact consumers, and CUDA compilation settings for all showcase executables.

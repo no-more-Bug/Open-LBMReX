@@ -8,11 +8,11 @@ Open-LBMReX 是基于 AMReX 的研究型格子 Boltzmann 代码库，提供 D2Q9
 
 ## AMR 效果展示
 
-下面两张二维动图来自此前的开发运行，展示 AMR 网格随流场变化的过程，黑线表示 AMR 块边界。这些是直观示例，不是本发布版本新增的验证结果；[已知限制](docs/known-limitations.md)仍然适用。
+下面两张动图来自此前的开发运行，展示 AMR 网格随流场变化的过程，黑线表示 AMR 块边界。这些是直观示例，不是本发布版本新增的验证结果；[已知限制](docs/known-limitations.md)仍然适用。
 
-**双剪切层（DSL）**：涡量场，固定 L1 带与随流场调整的细化区域，`t/t_c = 0–2`。
+**双剪切层（DSL）**：D3Q27 准二维切片的涡量场，上方条带至少为 L1，允许继续细化到 L2，`t/t_c = 0–2`。
 
-![二维双剪切层：涡量场与动态 AMR 块边界](docs/media/amr/double-shear-layer-2d.gif)
+![准二维双剪切层：条带最低 L1，允许继续细化到 L2](docs/media/amr/double-shear-layer-min-l1.gif)
 
 **DFG 通道圆柱绕流**：涡脱落过程中的归一化速度场与尾迹细化区域，`t = 28–35`。
 
